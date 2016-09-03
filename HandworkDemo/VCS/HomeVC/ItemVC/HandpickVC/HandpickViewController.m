@@ -9,30 +9,84 @@
 #import "HandpickViewController.h"
 
 @interface HandpickViewController ()
-
+@property (nonatomic,strong)NSMutableArray *slideArr;
+@property (nonatomic,strong)NSMutableArray *navigationArr;
+@property (nonatomic,strong)NSMutableArray *advanceArr;
+@property (nonatomic,strong)NSMutableArray *hotTopicArr;
+@property (nonatomic,strong)NSMutableArray *membersOpendArr;
 @end
 
 @implementation HandpickViewController
 
 static NSString * const reuseIdentifier = @"Cell";
-
+static NSString * const reuseHeaderId = @"HeadView";
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.collectionView.backgroundColor=[UIColor whiteColor];
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
+    [self getData];
     
-    // Register cell classes
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerClass:[MemersOpenReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reuseHeaderId];
     
     // Do any additional setup after loading the view.
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (instancetype)init
+{
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    return [self initWithCollectionViewLayout:layout];
 }
+#pragma mark - 懒加载数据源
+-(NSMutableArray*)slideArr
+{
+    if (!_slideArr)
+    {
+        _slideArr=@[].mutableCopy;
+    }
+    return _slideArr;
+}
+-(NSMutableArray*)membersOpendArr
+{
+    if (!_membersOpendArr)
+    {
+        _membersOpendArr=@[].mutableCopy;
+    }
+    return _membersOpendArr;
+}
+-(NSMutableArray*)navigationArr
+{
+    if (!_navigationArr)
+    {
+        _navigationArr=@[].mutableCopy;
+    }
+    return _navigationArr;
+}
+-(NSMutableArray*)advanceArr
+{
+    if (!_advanceArr)
+    {
+        _advanceArr=@[].mutableCopy;
+    }
+    return _advanceArr;
+}
+-(NSMutableArray*)hotTopicArr
+{
+    if (!_hotTopicArr)
+    {
+        _hotTopicArr=@[].mutableCopy;
+    }
+    return _hotTopicArr;
 
+}
+-(void)getData
+{
+[HandPicRequest getData:^(NSDictionary *dic) {
+    NSLog(@"%@",dic);
+}];
+
+
+}
 /*
 #pragma mark - Navigation
 
@@ -44,18 +98,45 @@ static NSString * const reuseIdentifier = @"Cell";
 */
 
 #pragma mark <UICollectionViewDataSource>
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+//区的数量
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 4;
 }
-
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
-    return 0;
+//每个区的模块数
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    if (section==0)
+    {
+//        return self.membersOpendArr.count;
+        return 2;
+    }
+    else if (section==1)
+    {
+        return self.navigationArr.count;
+    }
+    else if (section==2)
+    {
+        return self.advanceArr.count;
+    }
+    else
+    {
+        return self.hotTopicArr.count;
+    }
+    
 }
+//区头View
+-(UICollectionReusableView*)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
 
+    if (indexPath.section==0)
+    {
+        return nil;
+    }
+
+    return nil;
+}
+//设置Cell
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     

@@ -24,8 +24,8 @@
 -(void)setProperty
 {
     self.navigationBar.titleTextAttributes=@{NSFontAttributeName:[UIFont systemFontOfSize:20],NSForegroundColorAttributeName:[UIColor whiteColor]};
-   self.navigationBar.barTintColor=[UIColor colorWithRed:238/255.0 green:65/255.0 blue:67/255.0 alpha:1];
-    self.navigationBar.translucent=NO;
+    self.navigationBar.barTintColor=RedColor;
+    self.navigationBar.translucent=YES;
 }
 
 

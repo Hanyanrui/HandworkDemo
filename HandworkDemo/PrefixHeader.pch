@@ -24,6 +24,14 @@
 #import "AttentionViewController.h"
 #import "ExpertManViewController.h"
 #import "HandpickViewController.h"
+#import "MemersOpenReusableView.h"
+#import "SectionOneHeadView.h"
+#import  "SDCycleScrollView.h"
+#import "UIImageView+WebCache.h"
+#import "YYModel.h"
+#import "AFNetworking.h"
+#import "RequestDataTool.h"
+#import "HandPicRequest.h"
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
@@ -38,9 +46,9 @@
 #define TitleKey @"TitleKey" 
 #define ImageKey @"ImageKey"
 #define SelectImageKey @"SelectImageKey"
-
-
-
+#define RedColor [UIColor colorWithRed:238/255.0 green:65/255.0 blue:67/255.0 alpha:1]
+#define TitlesViewH 40
+#define HandPicUrl  @"http://m.shougongke.com/index.php?&c=index&a=indexNewest&vid=20"
 
 
 

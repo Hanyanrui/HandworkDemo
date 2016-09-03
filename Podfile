@@ -5,4 +5,7 @@ platform :ios, "9.0"
 
 target :'HandworkDemo' do
   pod 'YZDisplayViewController'
+  pod 'SDCycleScrollView'
+  pod 'YYModel'
+  pod 'AFNetworking'
 end
