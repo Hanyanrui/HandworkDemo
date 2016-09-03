@@ -1,0 +1,12 @@
+PODS:
+  - YZDisplayViewController (1.0.6)
+
+DEPENDENCIES:
+  - YZDisplayViewController
+
+SPEC CHECKSUMS:
+  YZDisplayViewController: 621f737a9aa3dfbc95a901e89e5e7c4b2ea6ef79
+
+PODFILE CHECKSUM: d865c3fa034a70c36284fa1aa93f672aa67f8d03
+
+COCOAPODS: 1.0.1
