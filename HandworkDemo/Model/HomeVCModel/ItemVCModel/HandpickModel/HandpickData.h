@@ -13,5 +13,6 @@
 @property (nonatomic,strong)NSArray *navigation;
 @property (nonatomic,strong)NSArray *advance;
 @property (nonatomic,strong)NSArray *hotTopic;
-@property (nonatomic,strong)MembersOpendModel* membersOpened;
+@property (nonatomic,strong)MembersOpendModel *membersOpened;
+
 @end

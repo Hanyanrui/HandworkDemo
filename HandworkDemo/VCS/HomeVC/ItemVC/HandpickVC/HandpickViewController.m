@@ -18,16 +18,20 @@
 
 @implementation HandpickViewController
 
-static NSString * const reuseIdentifier = @"Cell";
+
 static NSString * const reuseHeaderId = @"HeadView";
+static NSString * const MembersOpened = @"MembersOpened";
+static NSString * const Navigation = @"Navigation";
+static NSString * const Advance = @"Advance";
+static NSString * const Hotspot= @"Hotspot";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.collectionView.backgroundColor=[UIColor whiteColor];
     [self getData];
-//    [self.collectionView registerClass:[MembersOpenedCell class] forCellWithReuseIdentifier:reuseIdentifier];
-//    [self.collectionView registerClass:[NavigationCell class] forCellWithReuseIdentifier:reuseIdentifier];
-//    [self.collectionView registerClass:[AdvanceCell class] forCellWithReuseIdentifier:reuseIdentifier];
-//    [self.collectionView registerClass:[HotspotCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([MembersOpenedCell class]) bundle:nil]forCellWithReuseIdentifier:MembersOpened];
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([NavigationCell class]) bundle:nil] forCellWithReuseIdentifier:Navigation];
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([AdvanceCell class]) bundle:nil] forCellWithReuseIdentifier:Advance];
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([HotspotCell class]) bundle:nil] forCellWithReuseIdentifier:Hotspot];
     [self.collectionView registerClass:[MemersOpenReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reuseHeaderId];
     
     // Do any additional setup after loading the view.
@@ -87,6 +91,7 @@ static NSString * const reuseHeaderId = @"HeadView";
              [self.slideArr addObjectsFromArray:data.slide];
              [self.membersOpendArr  addObject: data.membersOpened];
              [self.navigationArr addObjectsFromArray:data.navigation];
+             [self.navigationArr addObject:[self setQianDaoModel]];
              [self.advanceArr addObjectsFromArray:data.advance];
              [self.hotTopicArr addObjectsFromArray:data.hotTopic];
              dispatch_async(dispatch_get_main_queue(), ^{
@@ -95,7 +100,14 @@ static NSString * const reuseHeaderId = @"HeadView";
          }];
     });
 }
-
+//签到模块
+-(NavigationModel*)setQianDaoModel
+{
+    NavigationModel *model=[NavigationModel new];
+    model.name=@"签到";
+    model.pic=nil;
+    return model;
+}
 #pragma mark <UICollectionViewDataSource>
 //区的数量
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -131,12 +143,50 @@ static NSString * const reuseHeaderId = @"HeadView";
         CGFloat height=kMainW/[model.width floatValue] *[model.height floatValue];
         return CGSizeMake(kMainW, height);
     }
+    else if(indexPath.section==1)
+    {
+        CGFloat width =kMainW/8;
+        CGFloat height=width*3/2;
+        return CGSizeMake(width, height);
+
+    }
+        
     return CGSizeMake(100, 300);
+}
+//列间距
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section;
+{
+    if (section==1)
+    {
+        return kMainW/15;
+    }
+    return 0.0f;
+
+}
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    if (section==1)
+    {
+         CGFloat width =kMainW/8;
+         return UIEdgeInsetsMake(0,width/2,0, width/2);
+    }
+    else
+    {
+    return UIEdgeInsetsMake(0, 0, 0, 0);
+   }
 }
 //区头大小
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
-    return CGSizeMake(0, kMainH/4);
+    if (section==0)
+    {
+        return CGSizeMake(0, kMainH/4);
+    }
+    else
+    {
+        return CGSizeZero;
+    }
+
 }
 //区头View
 -(UICollectionReusableView*)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
@@ -159,34 +209,34 @@ static NSString * const reuseHeaderId = @"HeadView";
 }
 //设置Cell
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    if (indexPath.section==0)
-//    {
-//        MembersOpenedCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-//        MembersOpendModel *model=self.membersOpendArr[indexPath.row];
-//        cell.model=model;
-//        return cell;
-//    }
-//    else if (indexPath.section==1)
-//    {
-//        NavigationCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-//        NavigationModel *model=self.navigationArr[indexPath.row];
-//        cell.model=model;
-//         return cell;
-//    }
-//    else if (indexPath.section==2)
-//    {
-//        AdvanceCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-//        AdvanceModel *model=self.advanceArr[indexPath.row];
-//        cell.model=model;
-//         return cell;
-//    }
-//    else
-//    {
-//    HotspotCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-//        HotTopicModel *model=self.hotTopicArr[indexPath.row];
-//        cell.model=model;
-//         return cell;
-//    }
+    if (indexPath.section==0)
+    {
+        MembersOpenedCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MembersOpened forIndexPath:indexPath];
+        MembersOpendModel *model=self.membersOpendArr[indexPath.row];
+        cell.model=model;
+        return cell;
+    }
+    else if (indexPath.section==1)
+    {
+        NavigationCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:Navigation forIndexPath:indexPath];
+        NavigationModel *model=self.navigationArr[indexPath.row];
+        cell.model=model;
+         return cell;
+    }
+    else if (indexPath.section==2)
+    {
+        AdvanceCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:Advance forIndexPath:indexPath];
+        AdvanceModel *model=self.advanceArr[indexPath.row];
+        cell.model=model;
+         return cell;
+    }
+    else
+    {
+    HotspotCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:Hotspot forIndexPath:indexPath];
+        HotTopicModel *model=self.hotTopicArr[indexPath.row];
+        cell.model=model;
+         return cell;
+    }
     return nil;
 }
 

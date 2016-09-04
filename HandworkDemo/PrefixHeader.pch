@@ -38,11 +38,10 @@
 #import "NavigationModel.h"
 #import "HotTopicModel.h"
 #import "AdvanceModel.h"
-#import "SectionOneHeadView.h"
-//#import "MembersOpenedCell.h"
-//#import "NavigationCell.m"
-//#import "AdvanceCell.m"
-//#import "HotspotCell.h"
+#import "MembersOpenedCell.h"
+#import "NavigationCell.h"
+#import "AdvanceCell.h"
+#import "HotspotCell.h"
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
