@@ -15,7 +15,6 @@
              @"navigation" : [NavigationModel class],
              @"advance" : [AdvanceModel class],
              @"hotTopic" : [HotTopicModel class],
-             @"membersOpend" : [MembersOpendModel class]
             };
 }
 @end

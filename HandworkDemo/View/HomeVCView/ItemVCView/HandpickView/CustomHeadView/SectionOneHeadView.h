@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^SectionBlock)(NSInteger);
+
+
 @interface SectionOneHeadView : UIView
-@property(nonatomic,strong)NSMutableArray *dataArr;
+@property(nonatomic,copy)SectionBlock block;
+-(instancetype)initWithFrame:(CGRect)frame withImageUrlArr:(NSMutableArray*)urlArr;
+-(void)clickImageOfCycleScrollViewWithBlock:(SectionBlock)block;
 @end

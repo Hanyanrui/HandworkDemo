@@ -13,9 +13,6 @@
 {
 [RequestDataTool get:HandPicUrl params:nil success:^(id responseObj) {
     HandpickData *data=[HandpickData yy_modelWithJSON:responseObj[@"data"]];
-//    SlideModel *model=data.slide[0];
-    NSLog(@"%@",data.slide);
-    
     if (block)
     {
         block(data);

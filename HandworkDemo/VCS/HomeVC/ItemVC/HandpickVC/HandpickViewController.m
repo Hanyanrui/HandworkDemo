@@ -23,11 +23,11 @@ static NSString * const reuseHeaderId = @"HeadView";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.collectionView.backgroundColor=[UIColor whiteColor];
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
     [self getData];
-    
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+//    [self.collectionView registerClass:[MembersOpenedCell class] forCellWithReuseIdentifier:reuseIdentifier];
+//    [self.collectionView registerClass:[NavigationCell class] forCellWithReuseIdentifier:reuseIdentifier];
+//    [self.collectionView registerClass:[AdvanceCell class] forCellWithReuseIdentifier:reuseIdentifier];
+//    [self.collectionView registerClass:[HotspotCell class] forCellWithReuseIdentifier:reuseIdentifier];
     [self.collectionView registerClass:[MemersOpenReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reuseHeaderId];
     
     // Do any additional setup after loading the view.
@@ -81,23 +81,20 @@ static NSString * const reuseHeaderId = @"HeadView";
 }
 -(void)getData
 {
-[HandpicRequest getData:^(HandpickData *data)
-    {
-        SlideModel *model=data.slide[0];
-    NSLog(@"%@",model);
-}];
-
-
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [HandpicRequest getData:^(HandpickData *data)
+         {
+             [self.slideArr addObjectsFromArray:data.slide];
+             [self.membersOpendArr  addObject: data.membersOpened];
+             [self.navigationArr addObjectsFromArray:data.navigation];
+             [self.advanceArr addObjectsFromArray:data.advance];
+             [self.hotTopicArr addObjectsFromArray:data.hotTopic];
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 [self.collectionView reloadData];
+             });
+         }];
+    });
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark <UICollectionViewDataSource>
 //区的数量
@@ -110,8 +107,7 @@ static NSString * const reuseHeaderId = @"HeadView";
 {
     if (section==0)
     {
-//        return self.membersOpendArr.count;
-        return 2;
+        return self.membersOpendArr.count;
     }
     else if (section==1)
     {
@@ -125,26 +121,73 @@ static NSString * const reuseHeaderId = @"HeadView";
     {
         return self.hotTopicArr.count;
     }
-    
+}
+//模块大小
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section==0)
+    {
+        MembersOpendModel*model=self.membersOpendArr[indexPath.row];
+        CGFloat height=kMainW/[model.width floatValue] *[model.height floatValue];
+        return CGSizeMake(kMainW, height);
+    }
+    return CGSizeMake(100, 300);
+}
+//区头大小
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    return CGSizeMake(0, kMainH/4);
 }
 //区头View
 -(UICollectionReusableView*)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-
+    UICollectionReusableView *reusableView=reusableView=[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reuseHeaderId forIndexPath:indexPath];
+    for (UIView *view in reusableView.subviews) {
+        [view removeFromSuperview];
+    }
     if (indexPath.section==0)
     {
-        return nil;
+        SectionOneHeadView *headView=[[SectionOneHeadView alloc]initWithFrame:
+                                      CGRectMake(0, 0, kMainW, kMainH/4) withImageUrlArr:self.slideArr];
+        [headView clickImageOfCycleScrollViewWithBlock:^(NSInteger index) {
+            NSLog(@"%ld",index);
+        }];
+        [reusableView addSubview:headView];
     }
 
-    return nil;
+   return reusableView;
 }
 //设置Cell
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell
-    
-    return cell;
+//    if (indexPath.section==0)
+//    {
+//        MembersOpenedCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+//        MembersOpendModel *model=self.membersOpendArr[indexPath.row];
+//        cell.model=model;
+//        return cell;
+//    }
+//    else if (indexPath.section==1)
+//    {
+//        NavigationCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+//        NavigationModel *model=self.navigationArr[indexPath.row];
+//        cell.model=model;
+//         return cell;
+//    }
+//    else if (indexPath.section==2)
+//    {
+//        AdvanceCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+//        AdvanceModel *model=self.advanceArr[indexPath.row];
+//        cell.model=model;
+//         return cell;
+//    }
+//    else
+//    {
+//    HotspotCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+//        HotTopicModel *model=self.hotTopicArr[indexPath.row];
+//        cell.model=model;
+//         return cell;
+//    }
+    return nil;
 }
 
 #pragma mark <UICollectionViewDelegate>
