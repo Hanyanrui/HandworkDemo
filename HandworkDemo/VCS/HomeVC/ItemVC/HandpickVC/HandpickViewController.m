@@ -81,8 +81,10 @@ static NSString * const reuseHeaderId = @"HeadView";
 }
 -(void)getData
 {
-[HandPicRequest getData:^(NSDictionary *dic) {
-    NSLog(@"%@",dic);
+[HandpicRequest getData:^(HandpickData *data)
+    {
+        SlideModel *model=data.slide[0];
+    NSLog(@"%@",model);
 }];
 
 
