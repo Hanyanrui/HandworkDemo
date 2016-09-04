@@ -49,18 +49,19 @@
     {
         _model=model;
     }
+    CGFloat width =kMainW/8;
     if (model.pic)
     {
         [_imageView sd_setImageWithURL:[NSURL URLWithString:model.pic]];
+         _nameLb.frame=CGRectMake(0, width, width, width/2);
     }
     else
     {
         _imageView.image=[UIImage imageNamed:@"icon_qiandao_"];
+        _nameLb.frame=CGRectMake(width/6, width, width*2/3, width/2);
     }
-    CGFloat width =kMainW/8;
     _imageView.frame=CGRectMake(0, 0, width, width);
-    _nameLb.frame=CGRectMake(0, width, width, width/2);
-    _nameLb.text=model.name;
+       _nameLb.text=model.name;
     [_nameLb adjustsFontSizeToFitWidth];
 
 }

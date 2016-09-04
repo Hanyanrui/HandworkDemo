@@ -13,7 +13,6 @@
 		3F003A361D7A71CF00E35471 /* FairViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F003A351D7A71CF00E35471 /* FairViewController.m */; };
 		3F003A391D7A7E9700E35471 /* FatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F003A381D7A7E9700E35471 /* FatherViewController.m */; };
 		3F003A431D7A81D000E35471 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F003A421D7A81D000E35471 /* HomeViewController.m */; };
-		3F003C431D7AAD1600E35471 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F003A561D7AAD1500E35471 /* 1.png */; };
 		3F003C441D7AAD1600E35471 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F003A571D7AAD1500E35471 /* Contents.json */; };
 		3F003C451D7AAD1600E35471 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F003A591D7AAD1500E35471 /* 2.jpg */; };
 		3F003C461D7AAD1600E35471 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F003A5A1D7AAD1500E35471 /* Contents.json */; };
@@ -417,7 +416,6 @@
 		3F003A381D7A7E9700E35471 /* FatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FatherViewController.m; sourceTree = "<group>"; };
 		3F003A411D7A81D000E35471 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		3F003A421D7A81D000E35471 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		3F003A561D7AAD1500E35471 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		3F003A571D7AAD1500E35471 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		3F003A591D7AAD1500E35471 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		3F003A5A1D7AAD1500E35471 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
@@ -1001,7 +999,6 @@
 		3F003A551D7AAD1500E35471 /* 1.imageset */ = {
 			isa = PBXGroup;
 			children = (
-				3F003A561D7AAD1500E35471 /* 1.png */,
 				3F003A571D7AAD1500E35471 /* Contents.json */,
 			);
 			path = 1.imageset;
@@ -2898,7 +2895,6 @@
 				3F003D9C1D7AAD1600E35471 /* detailLaudH@2x.png in Resources */,
 				3F003D251D7AAD1600E35471 /* sgk_course_cate_jiuwugaizao_selected.png in Resources */,
 				3F003D9E1D7AAD1600E35471 /* Contents.json in Resources */,
-				3F003C431D7AAD1600E35471 /* 1.png in Resources */,
 				3F003C851D7AAD1600E35471 /* class_pentagon_off@3x.png in Resources */,
 				3F003C5D1D7AAD1600E35471 /* AppIcon57x57.png in Resources */,
 				3F003C4D1D7AAD1600E35471 /* activity@3x.png in Resources */,
@@ -3354,6 +3350,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
@@ -3393,6 +3390,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

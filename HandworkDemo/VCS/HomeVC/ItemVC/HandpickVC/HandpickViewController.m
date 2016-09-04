@@ -148,10 +148,16 @@ static NSString * const Hotspot= @"Hotspot";
         CGFloat width =kMainW/8;
         CGFloat height=width*3/2;
         return CGSizeMake(width, height);
-
+    }
+    else if (indexPath.section==2)
+    {
+       return CGSizeMake((kMainW-5)/2, kMainH/4);
+    }
+    else
+    {
+    return CGSizeMake(kMainW, kMainH/3);
     }
         
-    return CGSizeMake(100, 300);
 }
 //列间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section;
@@ -160,20 +166,29 @@ static NSString * const Hotspot= @"Hotspot";
     {
         return kMainW/15;
     }
+    else if (section==2)
+    {
+        return 5;
+    }
     return 0.0f;
 
+}
+//行间距
+ - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0.0f;
 }
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
     if (section==1)
     {
          CGFloat width =kMainW/8;
-         return UIEdgeInsetsMake(0,width/2,0, width/2);
+         return UIEdgeInsetsMake(0,width/2,10, width/2);
     }
     else
     {
-    return UIEdgeInsetsMake(0, 0, 0, 0);
-   }
+        return UIEdgeInsetsMake(0, 0, 0, 0);
+    }
 }
 //区头大小
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
