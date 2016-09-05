@@ -6,8 +6,8 @@
 //  Copyright © 2016年 HYR. All rights reserved.
 //
 
-#import <YZDisplayViewController/YZDisplayViewController.h>
 
+#import <YZDisplayViewController/YZDisplayViewController.h>
 @interface FatherViewController : YZDisplayViewController
 
 @end

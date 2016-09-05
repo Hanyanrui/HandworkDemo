@@ -28,18 +28,34 @@ static NSString * const Hotspot= @"Hotspot";
     [super viewDidLoad];
     self.collectionView.backgroundColor=[UIColor whiteColor];
     [self getData];
-    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([MembersOpenedCell class]) bundle:nil]forCellWithReuseIdentifier:MembersOpened];
-    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([NavigationCell class]) bundle:nil] forCellWithReuseIdentifier:Navigation];
-    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([AdvanceCell class]) bundle:nil] forCellWithReuseIdentifier:Advance];
-    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([HotspotCell class]) bundle:nil] forCellWithReuseIdentifier:Hotspot];
-    [self.collectionView registerClass:[MemersOpenReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reuseHeaderId];
+    [self registCustomCell];
+    [self ceratRefreshHeader];
     
-    // Do any additional setup after loading the view.
 }
 - (instancetype)init
 {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     return [self initWithCollectionViewLayout:layout];
+}
+//注册可以复用的cell
+-(void)registCustomCell
+{
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([MembersOpenedCell class]) bundle:nil]forCellWithReuseIdentifier:MembersOpened];
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([NavigationCell class]) bundle:nil] forCellWithReuseIdentifier:Navigation];
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([AdvanceCell class]) bundle:nil] forCellWithReuseIdentifier:Advance];
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([HotspotCell class]) bundle:nil] forCellWithReuseIdentifier:Hotspot];
+    [self.collectionView registerClass:[MemersOpenReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reuseHeaderId];
+}
+-(void)ceratRefreshHeader
+{
+    MJRefreshGifHeader *header=[MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData:)];
+    [header setImages:RefreshImages forState:(MJRefreshStateRefreshing)];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
+    [header setTitle:@"松开刷新" forState:MJRefreshStatePulling];
+    [header setTitle:@"小客正在刷新" forState:MJRefreshStateRefreshing];
+    self.collectionView.mj_header=header;
+    [header beginRefreshing];
 }
 #pragma mark - 懒加载数据源
 -(NSMutableArray*)slideArr
@@ -83,9 +99,15 @@ static NSString * const Hotspot= @"Hotspot";
     return _hotTopicArr;
 
 }
+//请求数据
 -(void)getData
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self.slideArr removeAllObjects];
+        [self.membersOpendArr removeAllObjects];
+        [self.navigationArr removeAllObjects];
+        [self.advanceArr removeAllObjects];
+        [self.hotTopicArr removeAllObjects];
         [HandpicRequest getData:^(HandpickData *data)
          {
              [self.slideArr addObjectsFromArray:data.slide];
@@ -95,10 +117,16 @@ static NSString * const Hotspot= @"Hotspot";
              [self.advanceArr addObjectsFromArray:data.advance];
              [self.hotTopicArr addObjectsFromArray:data.hotTopic];
              dispatch_async(dispatch_get_main_queue(), ^{
+                 [self.collectionView.mj_header endRefreshing];
                  [self.collectionView reloadData];
              });
          }];
     });
+}
+//刷新数据
+-(void)refreshData:(MJRefreshGifHeader *)header
+{
+    [self getData];
 }
 //签到模块
 -(NavigationModel*)setQianDaoModel
@@ -157,7 +185,6 @@ static NSString * const Hotspot= @"Hotspot";
     {
     return CGSizeMake(kMainW, kMainH/3);
     }
-        
 }
 //列间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section;
@@ -171,13 +198,13 @@ static NSString * const Hotspot= @"Hotspot";
         return 5;
     }
     return 0.0f;
-
 }
 //行间距
  - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
     return 0.0f;
 }
+//页边距
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
     if (section==1)
@@ -197,16 +224,19 @@ static NSString * const Hotspot= @"Hotspot";
     {
         return CGSizeMake(0, kMainH/4);
     }
+    else if (section==3)
+    {
+        return CGSizeMake(0, kMainH/20);
+    }
     else
     {
         return CGSizeZero;
     }
-
 }
 //区头View
 -(UICollectionReusableView*)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionReusableView *reusableView=reusableView=[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reuseHeaderId forIndexPath:indexPath];
+   UICollectionReusableView *reusableView=reusableView=[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reuseHeaderId forIndexPath:indexPath];
     for (UIView *view in reusableView.subviews) {
         [view removeFromSuperview];
     }
@@ -215,11 +245,19 @@ static NSString * const Hotspot= @"Hotspot";
         SectionOneHeadView *headView=[[SectionOneHeadView alloc]initWithFrame:
                                       CGRectMake(0, 0, kMainW, kMainH/4) withImageUrlArr:self.slideArr];
         [headView clickImageOfCycleScrollViewWithBlock:^(NSInteger index) {
-            NSLog(@"%ld",index);
+            NSLog(@"%ld",(long)index);
         }];
         [reusableView addSubview:headView];
     }
-
+    else if (indexPath.section==3)
+    {
+        UILabel *hotTopicLB=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, kMainW, kMainH/20)];
+        hotTopicLB.text=@"————————————热门专题————————————";
+        hotTopicLB.adjustsFontSizeToFitWidth=YES;
+        hotTopicLB.textAlignment=NSTextAlignmentCenter;
+        hotTopicLB.textColor=[UIColor grayColor];
+         [reusableView addSubview:hotTopicLB];
+    }
    return reusableView;
 }
 //设置Cell
@@ -252,38 +290,78 @@ static NSString * const Hotspot= @"Hotspot";
         cell.model=model;
          return cell;
     }
-    return nil;
 }
 
 #pragma mark <UICollectionViewDelegate>
-
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section==0)
+    {
+        NSLog(@"开通会员，十三大专属特权");
+    }
+    else if(indexPath.section==1)
+    {
+        if (indexPath.row==0)
+        {
+            NSLog(@"看电视");
+        }
+        else if(indexPath.row==1)
+        {
+        NSLog(@"玩直播");
+        }
+        else if(indexPath.row==2)
+        {
+          NSLog(@"线下可");
+        }
+        else
+        {
+        NSLog(@"签到");
+        }
+    }
+    else if(indexPath.section==2)
+    {
+        if (indexPath.row==0)
+        {
+            NSLog(@"新手入门");
+        }
+        else
+        {
+            NSLog(@"每日热点教程");
+        }
+    }
+    else
+    {
+        NSLog(@"热门专题---%ld",(long)indexPath.row);
+    }
 }
-*/
 
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
+-(void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
+{
+    CATransform3D rotation;//3D缩放
+
+    rotation = CATransform3DScale(rotation, 0.8, 0.8, 1);
+    
+    rotation.m34 = 1.0/ 1000;
+    cell.layer.shadowColor = [[UIColor redColor]CGColor];
+    cell.layer.shadowOffset = CGSizeMake(10, 10);
+    cell.alpha = 0;
+    
+    cell.layer.transform = rotation;
+    
+    [UIView beginAnimations:@"rotation" context:NULL];
+    //旋转时间
+    [UIView setAnimationDuration:0.6];
+    cell.layer.transform = CATransform3DIdentity;
+    cell.alpha = 1;
+    cell.layer.shadowOffset = CGSizeMake(0, 0);
+    [UIView commitAnimations];
+
 }
 
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
 
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
+
+
+
 
 @end

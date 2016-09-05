@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C0C567006FD3F8B88DC6B4B72508924D'
+               BlueprintIdentifier = '38B9632541A93EF76BEE3EA1ECB8487A'
                BlueprintName = 'YZDisplayViewController'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libYZDisplayViewController.a'>

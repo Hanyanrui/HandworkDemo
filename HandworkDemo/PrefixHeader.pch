@@ -42,6 +42,7 @@
 #import "NavigationCell.h"
 #import "AdvanceCell.h"
 #import "HotspotCell.h"
+#import "MJRefresh.h"
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
@@ -58,6 +59,7 @@
 #define SelectImageKey @"SelectImageKey"
 #define RedColor [UIColor colorWithRed:238/255.0 green:65/255.0 blue:67/255.0 alpha:1]
 #define TitlesViewH 40
+#define RefreshImages @[[UIImage imageNamed:@"loading_1"],[UIImage imageNamed:@"loading_2"],[UIImage imageNamed:@"loading_3"],[UIImage imageNamed:@"loading_4"],[UIImage imageNamed:@"loading_5"],[UIImage imageNamed:@"loading_6"],[UIImage imageNamed:@"loading_7"],[UIImage imageNamed:@"loading_8"],[UIImage imageNamed:@"loading_9"],[UIImage imageNamed:@"loading_10"]]
 #define HandPicUrl  @"http://m.shougongke.com/index.php?&c=index&a=indexNewest&vid=20"
 
 

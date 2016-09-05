@@ -8,4 +8,5 @@ target :'HandworkDemo' do
   pod 'SDCycleScrollView'
   pod 'YYModel'
   pod 'AFNetworking'
+  pod 'MJRefresh'
 end
