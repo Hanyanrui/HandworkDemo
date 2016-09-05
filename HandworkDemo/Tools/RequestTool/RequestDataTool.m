@@ -28,6 +28,7 @@
 +(void)post:(NSString *)url params:(NSDictionary *)params success:(void (^)(id responseObj))success failure:(void (^)(NSError *))failure
 {
     AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
+    mgr.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
     [mgr POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) {
             success(responseObject);

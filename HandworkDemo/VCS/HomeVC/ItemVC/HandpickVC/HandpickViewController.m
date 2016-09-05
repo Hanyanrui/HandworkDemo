@@ -102,12 +102,12 @@ static NSString * const Hotspot= @"Hotspot";
 //请求数据
 -(void)getData
 {
+    [self.slideArr removeAllObjects];
+    [self.membersOpendArr removeAllObjects];
+    [self.navigationArr removeAllObjects];
+    [self.advanceArr removeAllObjects];
+    [self.hotTopicArr removeAllObjects];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self.slideArr removeAllObjects];
-        [self.membersOpendArr removeAllObjects];
-        [self.navigationArr removeAllObjects];
-        [self.advanceArr removeAllObjects];
-        [self.hotTopicArr removeAllObjects];
         [HandpicRequest getData:^(HandpickData *data)
          {
              [self.slideArr addObjectsFromArray:data.slide];
@@ -337,26 +337,26 @@ static NSString * const Hotspot= @"Hotspot";
 
 -(void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 
-{
-    CATransform3D rotation;//3D缩放
-
+{  CATransform3D rotation;//3D旋转
+//       rotation = CATransform3DMakeTranslation(0 ,50 ,20);
+    rotation = CATransform3DMakeRotation( M_PI_4 , 0.0, 0.7, 0.4);
+    //逆时针旋转
     rotation = CATransform3DScale(rotation, 0.8, 0.8, 1);
     
     rotation.m34 = 1.0/ 1000;
     cell.layer.shadowColor = [[UIColor redColor]CGColor];
     cell.layer.shadowOffset = CGSizeMake(10, 10);
     cell.alpha = 0;
-    
     cell.layer.transform = rotation;
     
     [UIView beginAnimations:@"rotation" context:NULL];
     //旋转时间
     [UIView setAnimationDuration:0.6];
+    
     cell.layer.transform = CATransform3DIdentity;
     cell.alpha = 1;
     cell.layer.shadowOffset = CGSizeMake(0, 0);
     [UIView commitAnimations];
-
 }
 
 

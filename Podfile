@@ -9,4 +9,5 @@ target :'HandworkDemo' do
   pod 'YYModel'
   pod 'AFNetworking'
   pod 'MJRefresh'
+  pod 'SDAutoLayout'
 end
