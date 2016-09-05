@@ -9,9 +9,9 @@
 #import "ExpertManRequest.h"
 
 @implementation ExpertManRequest
-+(void)getData:(ExperManBlock)block
++(void)getDataWithDic:(NSDictionary*)dic withBlock:(ExperManBlock)block withErrorBlock:(ErrorBlock)failure
 {
-[RequestDataTool post:ExpertManUrl params:nil success:^(id responseObj) {
+[RequestDataTool post:ExpertManUrl params:dic success:^(id responseObj) {
     
     ExpertManData *data=[ ExpertManData yy_modelWithJSON:responseObj];
     if (block)
@@ -19,7 +19,12 @@
         block(data);
     }
 } failure:^(NSError * error) {
-    NSLog(@"%@",error);
+  
+    if (failure)
+    {
+        failure(error);
+    }
+    
 }];
 }
 @end

@@ -32,32 +32,53 @@
 {
     self.selectionStyle=UITableViewCellSelectionStyleNone;
     UIImageView *avatarImage=[UIImageView new];
-    avatarImage.sd_layout.topSpaceToView(self.contentView,10).leftSpaceToView(self.contentView,10).widthRatioToView(self.contentView,0.2).heightEqualToWidth();
-   avatarImage.sd_cornerRadiusFromWidthRatio=@0.5;
-    
     _avatarImage=avatarImage;
 
     UILabel *nick_nameLB=[UILabel new];
-    nick_nameLB.sd_layout.leftSpaceToView(avatarImage,10).topEqualToView(avatarImage).autoHeightRatio (0);
     _nick_nameLB=nick_nameLB;
     
     UILabel *countLB=[UILabel new];
-    countLB.sd_layout.leftEqualToView(nick_nameLB).topSpaceToView(nick_nameLB,10).autoHeightRatio(0);
-    countLB.font=[UIFont systemFontOfSize:15];
+    countLB.textColor=[UIColor grayColor];
+    countLB.adjustsFontSizeToFitWidth=YES;
     _countLB=countLB;
+
+    
+    UIButton *button=[UIButton buttonWithType:(UIButtonTypeCustom)];
+    [button setTitle:@"+关注" forState:(UIControlStateNormal)];
+    [button addTarget:self action:@selector(guanzhu:) forControlEvents:(UIControlEventTouchUpInside)];
+    [button setTitleColor:RedColor forState:(UIControlStateNormal)];
+    [button setTitleColor:[UIColor grayColor] forState:(UIControlStateSelected)];
+    button.titleLabel.adjustsFontSizeToFitWidth = YES;
+    button.layer.cornerRadius=5;
+     button.layer.borderWidth=1.5;
+    _attentionBtn=button;
+    
     
     UIImageView *host_picOneImage=[UIImageView new];
-    host_picOneImage.sd_layout.topSpaceToView(avatarImage,10).leftEqualToView(self.contentView). widthRatioToView(self.contentView,0.33).heightEqualToWidth();
     _host_picOneImage=host_picOneImage;
     
     UIImageView *host_picTwoImage=[UIImageView new];
-    host_picTwoImage.sd_layout.topEqualToView(host_picOneImage).bottomEqualToView(host_picOneImage).widthRatioToView(self.contentView,0.33).centerXEqualToView(self.contentView);
     _host_picTwoImage=host_picTwoImage;
+    
     UIImageView *host_picThreeImage=[UIImageView new];
-    host_picThreeImage.sd_layout.topEqualToView(host_picTwoImage).rightEqualToView(self.contentView).bottomEqualToView(self.contentView).widthRatioToView(self.contentView,0.33);
     _host_picThreeImage=host_picThreeImage;
     
-    [self.contentView sd_addSubviews:@[avatarImage,nick_nameLB,countLB,host_picOneImage,host_picTwoImage,host_picThreeImage]];
+    [self.contentView sd_addSubviews:@[avatarImage,nick_nameLB,countLB,host_picOneImage,host_picTwoImage,host_picThreeImage,button]];
+    
+    avatarImage.sd_layout.topSpaceToView(self.contentView,10).leftSpaceToView(self.contentView,10).widthRatioToView(self.contentView,0.2).heightEqualToWidth();
+    avatarImage.sd_cornerRadiusFromWidthRatio=@0.5;
+    
+    nick_nameLB.sd_layout.leftSpaceToView(avatarImage,10).widthRatioToView(self.contentView,0.6).topSpaceToView(self.contentView,15);
+    
+    countLB.sd_layout.leftEqualToView(nick_nameLB).topSpaceToView(nick_nameLB,10).widthRatioToView(self.contentView,0.6);
+    
+    button.sd_layout.rightSpaceToView(self.contentView,10).centerYEqualToView(avatarImage).widthRatioToView(avatarImage,0.6).heightRatioToView(avatarImage,0.4);
+    
+     host_picOneImage.sd_layout.topSpaceToView(avatarImage,10).leftEqualToView(self.contentView). widthRatioToView(self.contentView,0.33).heightEqualToWidth();
+    
+    host_picTwoImage.sd_layout.topEqualToView(host_picOneImage).widthRatioToView(self.contentView,0.33).centerXEqualToView(self.contentView).heightEqualToWidth();
+    
+    host_picThreeImage.sd_layout.topEqualToView(host_picTwoImage).rightEqualToView(self.contentView).widthRatioToView(self.contentView,0.33).heightEqualToWidth();
     [self setupAutoHeightWithBottomView:host_picOneImage bottomMargin:5];
 }
 -(void)setModel:(DataModel *)model
@@ -75,7 +96,34 @@
     [_host_picTwoImage sd_setImageWithURL:[NSURL URLWithString:model02.host_pic]];
     ListModel *model03=model.list[2];
    [_host_picThreeImage sd_setImageWithURL:[NSURL URLWithString:model03.host_pic]];
+    if ([model.guan_status isEqualToString:@"1"])
+    {
+        
+        _attentionBtn.layer.borderColor=[[UIColor grayColor] CGColor];
+        _attentionBtn.selected=YES;
+
+    }
+    else
+    {
+        _attentionBtn.layer.borderColor=[RedColor CGColor];
+        _attentionBtn.selected=NO;
+
+    }
+}
+-(void)guanzhu:(UIButton*)sender
+{
+    if (_block)
+    {
+        _block(sender.tag);
+    }
 
 }
+-(void)attentionBtnClick:(ButtonBlock)block
+{
+    if (block)
+    {
+        _block=block;
+    }
 
+}
 @end

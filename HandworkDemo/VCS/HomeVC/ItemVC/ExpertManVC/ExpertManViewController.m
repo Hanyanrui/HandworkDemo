@@ -16,7 +16,7 @@ static NSString * const reuseId = @"reuseIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self getData];
+    [self createRefreshHeaderAndFoofer];
     [self registCustomCell];
 }
 //懒加载数据源
@@ -32,22 +32,64 @@ static NSString * const reuseId = @"reuseIdentifier";
 {
     [self.tableView registerClass:[ExpertManCell class] forCellReuseIdentifier:reuseId];
 }
-//请求数据
+-(void)createRefreshHeaderAndFoofer
+{
+    MJRefreshGifHeader *header=[MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
+    [header setImages:RefreshImages forState:(MJRefreshStateRefreshing)];
+     header.lastUpdatedTimeLabel.hidden = YES;
+    [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
+    [header setTitle:@"松开刷新" forState:MJRefreshStatePulling];
+    [header setTitle:@"小客正在刷新" forState:MJRefreshStateRefreshing];
+    self.tableView.mj_header=header;
+    [header beginRefreshing];
+    
+    MJRefreshAutoGifFooter *footer=[MJRefreshAutoGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    [footer setImages:RefreshImages forState:(MJRefreshStateRefreshing)];
+    [footer setTitle:@"上拉加载更多数据" forState:MJRefreshStateIdle];
+    [footer setTitle:@"松开加载" forState:MJRefreshStatePulling];
+    [footer setTitle:@"小客正在加载" forState:MJRefreshStateRefreshing];
+    self.tableView.mj_footer=footer;
+}
+//请求数据和下拉刷新
 -(void)getData
 {
+    [self.dataArr removeAllObjects];
+     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [ExpertManRequest getData:^(ExpertManData *data) {
-            [self.dataArr addObjectsFromArray:data.data];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView reloadData];
-            });
+        NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:@"act",@"up",@"vid",@"20", nil];
+      [ExpertManRequest getDataWithDic:dic withBlock:^(ExpertManData *data) {
+          [weakSelf.dataArr addObjectsFromArray:data.data];
+          [weakSelf.tableView.mj_header endRefreshing];
+          [weakSelf.tableView reloadData];
+      } withErrorBlock:^(NSError *error) {
+          [SVProgressHUD showErrorWithStatus:@"失败了,再来一次！"];
+          [weakSelf.tableView.mj_header endRefreshing];
+      }];
+
+    });
+}
+-(void)refreshData
+{
+    [self getData];
+}
+//上提加载跟多数据
+-(void)loadMoreData
+{
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        DataModel *model= [self.dataArr lastObject];
+        NSString *last_id=model.course_time;
+        NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:@"act",@"down",@"vid",@"20",@"last_id",last_id, nil];
+        [ExpertManRequest getDataWithDic:dic withBlock:^(ExpertManData *data) {
+            [weakSelf.dataArr addObjectsFromArray:data.data];
+            [weakSelf.tableView.mj_footer endRefreshing];
+            [weakSelf.tableView reloadData];
+        } withErrorBlock:^(NSError *error) {
+            [SVProgressHUD showErrorWithStatus:@"失败了,再来一次！"];
+            [weakSelf.tableView.mj_footer endRefreshing];
         }];
     });
-
-}
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
 }
 
 #pragma mark - Table view data source
@@ -62,14 +104,16 @@ static NSString * const reuseId = @"reuseIdentifier";
      DataModel*model=self.dataArr[indexPath.row%(self.dataArr.count)];
     
     return [self.tableView cellHeightForIndexPath:indexPath model:model keyPath:@"model" cellClass:[ExpertManCell class] contentViewWidth:[UIScreen mainScreen].bounds.size.width];
-//      return [self cellHeightForIndexPath:indexPath cellContentViewWidth:[UIScreen mainScreen].bounds.size.width];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ExpertManCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseId forIndexPath:indexPath];
     DataModel *model=self.dataArr[indexPath.row];
-
+    cell.attentionBtn.tag=[model.user_id integerValue];
     cell.model=model;
+    [cell attentionBtnClick:^(NSInteger index) {
+        NSLog(@"%ld",index);
+    }];
     return cell;
 }
 

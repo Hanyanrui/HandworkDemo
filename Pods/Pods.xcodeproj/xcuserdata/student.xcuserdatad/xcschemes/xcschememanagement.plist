@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>YYModel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,12 +52,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>60C74A5215CE9C1A0A94E5B4D1A7297D</key>
+		<key>36323A452636C34D41D13960C32B9AB8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6A35E46B0C5DA5807AF9F0C0D20E58ED</key>
+		<key>4B236AA39C6AA9A78A05ABEC337494C8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>700FA947876428920A158F029F816FF6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,7 +72,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9025D469B4ABB141F70CA2E49CAF0F7B</key>
+		<key>8C768B582CF8523E21B62F23D220A479</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8DC98905CC863182E82C5200D0652D21</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,17 +87,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DF9824208E5B91BEEDF182C6DFF5D4D8</key>
+		<key>CD382104478EAF1FB58B0B557534A33F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EAB4BC07FF4A8E22D0539FFB908C4B41</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F7D5D711F17F009991F080A40B66CCBA</key>
+		<key>FA5EA91AD9689B768841EA808551858F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

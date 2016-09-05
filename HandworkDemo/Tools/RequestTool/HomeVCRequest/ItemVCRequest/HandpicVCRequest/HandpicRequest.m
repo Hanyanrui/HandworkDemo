@@ -9,7 +9,7 @@
 #import "HandpicRequest.h"
 
 @implementation HandpicRequest
-+(void)getData:(HandpicBlock)block
++(void)getData:(HandpicBlock)block withErrorBlock:(ErrorBlock)failure
 {
 [RequestDataTool get:HandPicUrl params:nil success:^(id responseObj) {
     HandpickData *data=[HandpickData yy_modelWithJSON:responseObj[@"data"]];
@@ -18,9 +18,9 @@
         block(data);
     }
 } failure:^(NSError *error) {
-    if (error)
+    if (failure)
     {
-        NSLog(@"精品error---%@",error);
+        failure(error);
     }
 }];
 

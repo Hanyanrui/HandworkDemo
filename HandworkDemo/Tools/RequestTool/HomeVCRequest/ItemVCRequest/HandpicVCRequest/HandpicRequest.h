@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "HandpickData.h"
 typedef void(^HandpicBlock)(HandpickData* );
-
+typedef void(^ErrorBlock)(NSError*);
 @interface HandpicRequest : NSObject
 @property(nonatomic,copy)HandpicBlock block;
-+(void)getData:(HandpicBlock)block;
++(void)getData:(HandpicBlock)block withErrorBlock:(ErrorBlock)failure;
 @end

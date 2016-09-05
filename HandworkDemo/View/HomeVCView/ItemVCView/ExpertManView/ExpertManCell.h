@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^ButtonBlock)(NSInteger index);
+
+
 @interface ExpertManCell : UITableViewCell
 @property(nonatomic,strong)DataModel *model;
+@property(nonatomic,copy)ButtonBlock block;
 @property(nonatomic,strong)UIButton *attentionBtn;
+-(void)attentionBtnClick:(ButtonBlock)block;
 @end

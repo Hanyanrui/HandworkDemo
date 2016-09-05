@@ -21,6 +21,7 @@ PODS:
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - SVProgressHUD (2.0.3)
   - YYModel (1.0.4)
   - YZDisplayViewController (1.0.6)
 
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - MJRefresh
   - SDAutoLayout
   - SDCycleScrollView
+  - SVProgressHUD
   - YYModel
   - YZDisplayViewController
 
@@ -38,9 +40,10 @@ SPEC CHECKSUMS:
   SDAutoLayout: e9b36d04b8c0b504762a04d76fbbe5108944297a
   SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YZDisplayViewController: 621f737a9aa3dfbc95a901e89e5e7c4b2ea6ef79
 
-PODFILE CHECKSUM: ba2e4fc61aaf629b651d25ce82c414e3a550254b
+PODFILE CHECKSUM: e6a415a8b839f13de7fbc056d916b7f693b4b9aa
 
 COCOAPODS: 1.0.1

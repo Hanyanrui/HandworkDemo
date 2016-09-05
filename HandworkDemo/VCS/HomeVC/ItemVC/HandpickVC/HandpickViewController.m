@@ -27,9 +27,9 @@ static NSString * const Hotspot= @"Hotspot";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.collectionView.backgroundColor=[UIColor whiteColor];
-    [self getData];
-    [self registCustomCell];
     [self ceratRefreshHeader];
+    [self registCustomCell];
+
     
 }
 - (instancetype)init
@@ -100,6 +100,7 @@ static NSString * const Hotspot= @"Hotspot";
 
 }
 //请求数据
+
 -(void)getData
 {
     [self.slideArr removeAllObjects];
@@ -107,20 +108,24 @@ static NSString * const Hotspot= @"Hotspot";
     [self.navigationArr removeAllObjects];
     [self.advanceArr removeAllObjects];
     [self.hotTopicArr removeAllObjects];
+     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [HandpicRequest getData:^(HandpickData *data)
-         {
-             [self.slideArr addObjectsFromArray:data.slide];
-             [self.membersOpendArr  addObject: data.membersOpened];
-             [self.navigationArr addObjectsFromArray:data.navigation];
-             [self.navigationArr addObject:[self setQianDaoModel]];
-             [self.advanceArr addObjectsFromArray:data.advance];
-             [self.hotTopicArr addObjectsFromArray:data.hotTopic];
-             dispatch_async(dispatch_get_main_queue(), ^{
-                 [self.collectionView.mj_header endRefreshing];
-                 [self.collectionView reloadData];
-             });
-         }];
+        [HandpicRequest getData:^(HandpickData *data) {
+            [weakSelf.slideArr addObjectsFromArray:data.slide];
+            [weakSelf.membersOpendArr  addObject: data.membersOpened];
+            [weakSelf.navigationArr addObjectsFromArray:data.navigation];
+            [weakSelf.navigationArr addObject:[self setQianDaoModel]];
+            [weakSelf.advanceArr addObjectsFromArray:data.advance];
+            [weakSelf.hotTopicArr addObjectsFromArray:data.hotTopic];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf.collectionView.mj_header endRefreshing];
+                [weakSelf.collectionView reloadData];
+            });
+
+        } withErrorBlock:^(NSError *error) {
+            [SVProgressHUD showErrorWithStatus:@"失败了,再来一次"];
+            [weakSelf.collectionView.mj_header endRefreshing];
+        }];
     });
 }
 //刷新数据

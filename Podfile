@@ -10,4 +10,5 @@ target :'HandworkDemo' do
   pod 'AFNetworking'
   pod 'MJRefresh'
   pod 'SDAutoLayout'
+  pod 'SVProgressHUD'
 end
