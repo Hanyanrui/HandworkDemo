@@ -56,6 +56,10 @@
 #import "ActionRequest.h"
 #import "LoginViewController.h"
 #import "RegistViewController.h"
+#import "VerifyData.h"
+#import "VerifyRequest.h"
+#import "RegistData.h"
+#import "RegistRequest.h"
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
@@ -73,10 +77,21 @@
 #define RedColor [UIColor colorWithRed:238/255.0 green:65/255.0 blue:67/255.0 alpha:1]
 #define TitlesViewH 40
 #define RefreshImages @[[UIImage imageNamed:@"loading_1"],[UIImage imageNamed:@"loading_2"],[UIImage imageNamed:@"loading_3"],[UIImage imageNamed:@"loading_4"],[UIImage imageNamed:@"loading_5"],[UIImage imageNamed:@"loading_6"],[UIImage imageNamed:@"loading_7"],[UIImage imageNamed:@"loading_8"],[UIImage imageNamed:@"loading_9"],[UIImage imageNamed:@"loading_10"]]
+#define Alert(string) UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:string preferredStyle:UIAlertControllerStyleAlert]; \
+UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil]; \
+[alertController addAction:okAction]; \
+[self presentViewController:alertController animated:YES completion:nil];
+#define IndicaterStart  UIActivityIndicatorView *indicator=[[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(self.view.center.x, self.view.center.y-100, 0, 0)];\
+indicator.activityIndicatorViewStyle=UIActivityIndicatorViewStyleWhiteLarge;\
+[indicator startAnimating];\
+[self.view addSubview:indicator];
+#define IndicaterEnd [indicator stopAnimating];
+
 #define HandPicUrl  @"http://m.shougongke.com/index.php?&c=index&a=indexNewest&vid=20"
 #define ExpertManUrl @"http://m.shougongke.com/index.php?&c=Index&a=daren"
 #define ActionUrl  @"http://m.shougongke.com/index.php?&c=Course&a=activityList&vid=20"
-
+#define VerifyUrl @"http://m.shougongke.com/index.php?c=Login&a=getVerify"
+#define RegistUrl @"http://m.shougongke.com/index.php?c=Login&a=register"
 
 
 

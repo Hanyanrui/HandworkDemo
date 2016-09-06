@@ -369,6 +369,10 @@
 		3F003DA51D7AAD1600E35471 /* owl-login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F003C421D7AAD1600E35471 /* owl-login@2x.png */; };
 		3F003DB71D7AAE4000E35471 /* AttentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F003DB61D7AAE4000E35471 /* AttentionViewController.m */; };
 		3F003DCA1D7ADB7400E35471 /* MemersOpenReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F003DC91D7ADB7400E35471 /* MemersOpenReusableView.m */; };
+		3F1058ED1D7EBD27000DD913 /* VerifyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1058EC1D7EBD27000DD913 /* VerifyRequest.m */; };
+		3F1058F11D7EBD9B000DD913 /* VerifyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1058F01D7EBD9B000DD913 /* VerifyData.m */; };
+		3F1058F41D7EBE19000DD913 /* RegistData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1058F31D7EBE19000DD913 /* RegistData.m */; };
+		3F1058F71D7EBF32000DD913 /* RegistRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1058F61D7EBF32000DD913 /* RegistRequest.m */; };
 		3F12F5361D7DB0E900FEE8E7 /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F12F5351D7DB0E900FEE8E7 /* ActionViewController.m */; };
 		3F12F5491D7DB70100FEE8E7 /* ActionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F12F5481D7DB70100FEE8E7 /* ActionRequest.m */; };
 		3F12F5501D7DB76A00FEE8E7 /* ActionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F12F54C1D7DB76A00FEE8E7 /* ActionData.m */; };
@@ -787,6 +791,14 @@
 		3F003DB61D7AAE4000E35471 /* AttentionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionViewController.m; sourceTree = "<group>"; };
 		3F003DC81D7ADB7400E35471 /* MemersOpenReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemersOpenReusableView.h; sourceTree = "<group>"; };
 		3F003DC91D7ADB7400E35471 /* MemersOpenReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemersOpenReusableView.m; sourceTree = "<group>"; };
+		3F1058EB1D7EBD27000DD913 /* VerifyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyRequest.h; sourceTree = "<group>"; };
+		3F1058EC1D7EBD27000DD913 /* VerifyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyRequest.m; sourceTree = "<group>"; };
+		3F1058EF1D7EBD9B000DD913 /* VerifyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyData.h; sourceTree = "<group>"; };
+		3F1058F01D7EBD9B000DD913 /* VerifyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyData.m; sourceTree = "<group>"; };
+		3F1058F21D7EBE19000DD913 /* RegistData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistData.h; sourceTree = "<group>"; };
+		3F1058F31D7EBE19000DD913 /* RegistData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistData.m; sourceTree = "<group>"; };
+		3F1058F51D7EBF32000DD913 /* RegistRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistRequest.h; sourceTree = "<group>"; };
+		3F1058F61D7EBF32000DD913 /* RegistRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistRequest.m; sourceTree = "<group>"; };
 		3F12F5341D7DB0E900FEE8E7 /* ActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionViewController.h; sourceTree = "<group>"; };
 		3F12F5351D7DB0E900FEE8E7 /* ActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionViewController.m; sourceTree = "<group>"; };
 		3F12F5471D7DB70100FEE8E7 /* ActionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionRequest.h; sourceTree = "<group>"; };
@@ -2501,6 +2513,7 @@
 		3F003DCE1D7ADFAE00E35471 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3F1058EE1D7EBD9B000DD913 /* RegistModel */,
 				3F003DCF1D7ADFAE00E35471 /* HomeVCModel */,
 			);
 			path = Model;
@@ -2522,6 +2535,28 @@
 				3F46204E1D7BEF0300058AB7 /* HandpickModel */,
 			);
 			path = ItemVCModel;
+			sourceTree = "<group>";
+		};
+		3F1058EA1D7EBD27000DD913 /* RegisetVCRequest */ = {
+			isa = PBXGroup;
+			children = (
+				3F1058EB1D7EBD27000DD913 /* VerifyRequest.h */,
+				3F1058EC1D7EBD27000DD913 /* VerifyRequest.m */,
+				3F1058F51D7EBF32000DD913 /* RegistRequest.h */,
+				3F1058F61D7EBF32000DD913 /* RegistRequest.m */,
+			);
+			path = RegisetVCRequest;
+			sourceTree = "<group>";
+		};
+		3F1058EE1D7EBD9B000DD913 /* RegistModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F1058EF1D7EBD9B000DD913 /* VerifyData.h */,
+				3F1058F01D7EBD9B000DD913 /* VerifyData.m */,
+				3F1058F21D7EBE19000DD913 /* RegistData.h */,
+				3F1058F31D7EBE19000DD913 /* RegistData.m */,
+			);
+			path = RegistModel;
 			sourceTree = "<group>";
 		};
 		3F12F5461D7DB70100FEE8E7 /* ActionVCRequest */ = {
@@ -2709,6 +2744,7 @@
 			children = (
 				3F4620751D7BF6D100058AB7 /* RequestDataTool.h */,
 				3F4620761D7BF6D100058AB7 /* RequestDataTool.m */,
+				3F1058EA1D7EBD27000DD913 /* RegisetVCRequest */,
 				3F46206C1D7BF48800058AB7 /* HomeVCRequest */,
 			);
 			path = RequestTool;
@@ -3432,16 +3468,20 @@
 				3F46205F1D7BF28D00058AB7 /* NavigationModel.m in Sources */,
 				3F4620741D7BF63900058AB7 /* HandpicRequest.m in Sources */,
 				3F4620711D7BF5E900058AB7 /* GuideTool.m in Sources */,
+				3F1058F11D7EBD9B000DD913 /* VerifyData.m in Sources */,
 				3F2A6EE11D7D5D1900B69B99 /* ExpertManViewController.m in Sources */,
 				3F5D0E191D799CA800735890 /* main.m in Sources */,
 				3F2A6ECE1D7D5C6A00B69B99 /* AdvanceCell.m in Sources */,
 				3F2A6EDD1D7D5CD500B69B99 /* ExpertManCell.m in Sources */,
 				3F4620651D7BF34900058AB7 /* HotTopicModel.m in Sources */,
 				3F003A331D7A71A700E35471 /* HandGroupViewController.m in Sources */,
+				3F1058ED1D7EBD27000DD913 /* VerifyRequest.m in Sources */,
 				3F003A391D7A7E9700E35471 /* FatherViewController.m in Sources */,
 				3F003A431D7A81D000E35471 /* HomeViewController.m in Sources */,
 				3F12F5361D7DB0E900FEE8E7 /* ActionViewController.m in Sources */,
+				3F1058F71D7EBF32000DD913 /* RegistRequest.m in Sources */,
 				3F12F5511D7DB76A00FEE8E7 /* ActionModel.m in Sources */,
+				3F1058F41D7EBE19000DD913 /* RegistData.m in Sources */,
 				3F4620771D7BF6D100058AB7 /* RequestDataTool.m in Sources */,
 				3F12F5501D7DB76A00FEE8E7 /* ActionData.m in Sources */,
 			);

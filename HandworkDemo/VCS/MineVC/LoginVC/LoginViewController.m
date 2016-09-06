@@ -51,11 +51,12 @@
     [loginBtn setTitle:@"登录" forState:(UIControlStateNormal)];
     [loginBtn addTarget:self action:@selector(loginBtnClick:) forControlEvents:(UIControlEventTouchUpInside)];
     
-    UILabel *forgetLB=[UILabel new];
-    forgetLB.textColor=[UIColor whiteColor];
-    forgetLB.adjustsFontSizeToFitWidth=YES;
-    forgetLB.text=@"忘记密码";
     
+    UIButton *forgetBtn=[UIButton buttonWithType:(UIButtonTypeSystem)];
+    [forgetBtn setTitle:@"忘记密码" forState:(UIControlStateNormal)];
+    forgetBtn.titleLabel.adjustsFontSizeToFitWidth=YES;
+    [forgetBtn setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
+    [forgetBtn addTarget:self action:@selector(forgetBtnClick:) forControlEvents:(UIControlEventTouchUpInside)];
     
     UILabel *otherWayLB=[UILabel new];
     otherWayLB.adjustsFontSizeToFitWidth=YES;
@@ -86,22 +87,21 @@
     [backBtn setBackgroundImage:[UIImage imageNamed:@"sgk_course_cate_cixiubianzhi_selected"] forState:(UIControlStateNormal)];
     [backBtn addTarget:self action:@selector(backBtnClick:) forControlEvents:(UIControlEventTouchUpInside)];
     
-    [self.view sd_addSubviews:@[userNameTF,passwordTF,loginBtn,forgetLB,otherWayLB,weiboBtn,qqBtn,registBtn,bottomView]];
-    [passwordTF sd_addSubviews:@[eyeBtn]];
+    [self.view sd_addSubviews:@[userNameTF,passwordTF,loginBtn,forgetBtn,otherWayLB,weiboBtn,qqBtn,registBtn,bottomView,eyeBtn]];
     [bottomView sd_addSubviews:@[backBtn]];
     
     passwordTF.sd_layout.centerXEqualToView(self.view).centerYEqualToView(self.view).widthRatioToView(self.view,0.7).heightIs(35);
     
     userNameTF.sd_layout.leftEqualToView(passwordTF).rightEqualToView(passwordTF).heightIs(35).bottomSpaceToView(passwordTF,15);
     
-    eyeBtn.sd_layout.centerYEqualToView(passwordTF).rightSpaceToView(passwordTF,10).widthIs(20).heightIs(10);
+    eyeBtn.sd_layout.centerYEqualToView(passwordTF).rightSpaceToView(self.view,kMainW*0.15+15).widthIs(20).heightIs(10);
     
     loginBtn.sd_layout.topSpaceToView(passwordTF,15).leftEqualToView(passwordTF).rightEqualToView(passwordTF).heightIs(35);
     loginBtn.sd_cornerRadiusFromHeightRatio=@0.1;
     
-    forgetLB.sd_layout.leftEqualToView(loginBtn).topSpaceToView(loginBtn,15).widthRatioToView(loginBtn,0.25).heightRatioToView(loginBtn,0.5);
+    forgetBtn.sd_layout.leftEqualToView(loginBtn).topSpaceToView(loginBtn,15).widthRatioToView(loginBtn,0.25).heightRatioToView(loginBtn,0.5);
     
-    otherWayLB.sd_layout.topSpaceToView(forgetLB,15).centerXEqualToView(loginBtn).heightRatioToView(loginBtn,0.5).widthRatioToView(loginBtn,0.5);
+    otherWayLB.sd_layout.topSpaceToView(forgetBtn,15).centerXEqualToView(loginBtn).heightRatioToView(loginBtn,0.5).widthRatioToView(loginBtn,0.5);
     
     weiboBtn.sd_layout.topSpaceToView(otherWayLB,20).leftEqualToView(otherWayLB).heightIs(40).widthEqualToHeight();
     weiboBtn.sd_cornerRadiusFromHeightRatio=@0.5;
@@ -126,6 +126,13 @@
     NSLog(@"ddddd");
 }
 -(void)loginBtnClick:(UIButton*)sender
+{
+    
+    
+    
+    
+}
+-(void)forgetBtnClick:(UIButton*)sender
 {
     
     
