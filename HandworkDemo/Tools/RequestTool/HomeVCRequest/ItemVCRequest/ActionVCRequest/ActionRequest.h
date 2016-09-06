@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "ActionData.h"
-typedef void(^AttentionBlock)(ActionData*data);
+typedef void(^ActionBlock)(ActionData*data);
 typedef void(^ErrorBlock)(NSError*);
 @interface ActionRequest : NSObject
-+(void)getDataWithID:(NSString*)acId withBlock:(AttentionBlock)block withErrorBlock:(ErrorBlock)failure;
++(void)getDataWithID:(NSString*)acId withBlock:(ActionBlock)block withErrorBlock:(ErrorBlock)failure;
 @end

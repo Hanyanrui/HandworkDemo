@@ -1,13 +1,13 @@
 //
-//  AttentionViewController.h
+//  CircleModel.m
 //  HandworkDemo
 //
 //  Created by student on 16/9/6.
 //  Copyright © 2016年 HYR. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CircleModel.h"
 
-@interface AttentionViewController : UITableViewController
+@implementation CircleModel
 
 @end

@@ -9,7 +9,7 @@
 #import "ActionRequest.h"
 
 @implementation ActionRequest
-+(void)getDataWithID:(NSString*)acId withBlock:(AttentionBlock)block withErrorBlock:(ErrorBlock)failure
++(void)getDataWithID:(NSString*)acId withBlock:(ActionBlock)block withErrorBlock:(ErrorBlock)failure
 {
     
     NSString *url=[NSString stringWithFormat:@"http://m.shougongke.com/index.php?&c=Course&a=activityList&vid=20&id=%@",acId];

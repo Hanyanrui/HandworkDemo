@@ -46,5 +46,7 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>CFBundleDisplayName</key>
+	<string>手工客</string>
 </dict>
 </plist>

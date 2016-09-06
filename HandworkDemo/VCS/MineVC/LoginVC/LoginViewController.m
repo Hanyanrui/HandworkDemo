@@ -11,6 +11,7 @@
 @interface LoginViewController ()
 {
     UITextField *_passwordTF;
+    UITextField *_userNameTF;
 }
 @end
 
@@ -32,6 +33,7 @@
     userNameTF.borderStyle=UITextBorderStyleRoundedRect;
     userNameTF.alpha=0.8;
     userNameTF.placeholder=@"手机号/邮箱/用户名";
+    _userNameTF=userNameTF;
 
     UITextField *passwordTF=[UITextField new];
     passwordTF.borderStyle=UITextBorderStyleRoundedRect;
@@ -64,11 +66,11 @@
     otherWayLB.text=@"使用其他方式登录";
     
     UIButton *weiboBtn=[UIButton buttonWithType:(UIButtonTypeCustom)];
-    weiboBtn.backgroundColor=[UIColor redColor];
+    [weiboBtn setBackgroundImage:[UIImage imageNamed:@"weibo"] forState:(UIControlStateNormal)];
     [weiboBtn addTarget:self action:@selector(weiboBtnClick:) forControlEvents:(UIControlEventTouchUpInside)];
     
     UIButton *qqBtn=[UIButton buttonWithType:(UIButtonTypeCustom)];
-    qqBtn.backgroundColor=[UIColor blueColor];
+    [qqBtn setBackgroundImage:[UIImage imageNamed:@"qq"] forState:(UIControlStateNormal)];
     [qqBtn addTarget:self action:@selector(qqBtnClick:) forControlEvents:(UIControlEventTouchUpInside)];
     
     
@@ -84,7 +86,7 @@
     bottomView.backgroundColor=[UIColor whiteColor];
     
     UIButton*backBtn=[UIButton buttonWithType:(UIButtonTypeCustom)];
-    [backBtn setBackgroundImage:[UIImage imageNamed:@"sgk_course_cate_cixiubianzhi_selected"] forState:(UIControlStateNormal)];
+    [backBtn setBackgroundImage:[UIImage imageNamed:@"back"] forState:(UIControlStateNormal)];
     [backBtn addTarget:self action:@selector(backBtnClick:) forControlEvents:(UIControlEventTouchUpInside)];
     
     [self.view sd_addSubviews:@[userNameTF,passwordTF,loginBtn,forgetBtn,otherWayLB,weiboBtn,qqBtn,registBtn,bottomView,eyeBtn]];
@@ -127,9 +129,21 @@
 }
 -(void)loginBtnClick:(UIButton*)sender
 {
+    IndicaterStart
+   
+    NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:@"4f9e53010c1d56e54ee12d87fde138a9",@"account",@"5.12.2",@"app_version",@"1b2c0f74b4e718f40fa7d3121ee7d5b98bead3a62c3a0ea6baf1fb1e03cc15ab",@"device_token",@"T7XIPsngqBLx",@"key",@"0",@"opentype",@"83d61348f7f63359",@"password",@"ios",@"system",@"20",@"vid",nil];
     
-    
-    
+//    NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:_userNameTF.text,@"account",@"5.12.2",@"app_version",@"1b2c0f74b4e718f40fa7d3121ee7d5b98bead3a62c3a0ea6baf1fb1e03cc15ab",@"device_token",@"T7XIPsngqBLx",@"key",@"0",@"opentype",_passwordTF.text,@"password",@"ios",@"system",@"20",@"vid",nil];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        [LoginRequest getDataWithDic:dic withBlock:^(LoginData *data )
+         {
+             NSLog(@"%@",data);
+             IndicaterEnd
+             Alert(data.info);
+         } withErrorBlock:^(NSError *error) {
+         }];
+    });
     
 }
 -(void)forgetBtnClick:(UIButton*)sender

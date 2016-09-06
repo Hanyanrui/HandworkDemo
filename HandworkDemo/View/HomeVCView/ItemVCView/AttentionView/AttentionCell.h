@@ -1,5 +1,5 @@
 //
-//  AttentionViewController.h
+//  AttentionCell.h
 //  HandworkDemo
 //
 //  Created by student on 16/9/6.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AttentionViewController : UITableViewController
-
+@interface AttentionCell : UITableViewCell
+@property(nonatomic,strong)AttentionModel *model;
 @end

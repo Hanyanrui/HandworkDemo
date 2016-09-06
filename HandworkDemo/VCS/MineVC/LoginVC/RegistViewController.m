@@ -27,7 +27,6 @@
 }
 -(void)createSubViews
 {
-
     UIImageView *bgImageView=[[UIImageView alloc]initWithFrame:kMainB];
     bgImageView.image=[UIImage imageNamed:@"registerBackground.jpg"];
     bgImageView.userInteractionEnabled=YES;
@@ -45,7 +44,6 @@
     testTF.placeholder=@"验证码";
     _testTF=testTF;
     
-
     UIButton *testBtn=[UIButton buttonWithType:(UIButtonTypeCustom)];
     [testBtn setTitle:@"获取验证码" forState:(UIControlStateNormal)];
     [testBtn setTitleColor: RedColor forState:(UIControlStateNormal)];
@@ -85,7 +83,7 @@
     bottomView.backgroundColor=[UIColor whiteColor];
     
     UIButton*backBtn=[UIButton buttonWithType:(UIButtonTypeCustom)];
-    [backBtn setBackgroundImage:[UIImage imageNamed:@"sgk_course_cate_cixiubianzhi_selected"] forState:(UIControlStateNormal)];
+    [backBtn setBackgroundImage:[UIImage imageNamed:@"back"] forState:(UIControlStateNormal)];
     [backBtn addTarget:self action:@selector(backBtnClick:) forControlEvents:(UIControlEventTouchUpInside)];
     
     [self.view sd_addSubviews:@[userNameTF,testTF,passwordTF,registBtn,haveCountLB,loginBtn,bottomView, testBtn,eyeBtn]];
@@ -109,9 +107,6 @@
     bottomView.sd_layout.bottomEqualToView(self.view).rightEqualToView(self.view).leftEqualToView(self.view).heightIs(44);
     
     backBtn.sd_layout.centerYEqualToView(bottomView).leftSpaceToView(bottomView,30).heightRatioToView(bottomView,0.5).widthEqualToHeight();
-
-    
-    
 }
 //获取验证码
 -(void)testBtnClick:(UIButton*)sender
@@ -129,51 +124,35 @@
          } withErrorBlock:^(NSError *error) {
          }];
     });
-
 }
 -(void)eyeBtnClick:(UIButton*)sender
 {
-    
     _passwordTF.secureTextEntry=!_passwordTF.secureTextEntry;
-    
 }
 //注册
 -(void)registBtnClick:(UIButton*)sender
 {
     IndicaterStart
     NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:@"appstore",@"channel",_testTF.text,@"code", @"7EW8PYES1g66",@"key",_phoneTF.text,@"mobile",_passwordTF.text,@"password",@"ios",@"system",@"20",@"vid", nil];
-    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
         [RegistRequest getDataWithDic:dic withBlock:^(RegistData *data )
          {
              IndicaterEnd
              Alert(data.info);
-             
          } withErrorBlock:^(NSError *error) {
-             
          }];
-        
     });
-   
 }
-
 -(void)loginBtnClick:(UIButton*)sender
 {
-    
-   
-
-    NSLog(@"获取验证码");
-    
+    [self.navigationController popViewControllerAnimated:YES];
 }
-
 -(void)backBtnClick:(UIButton*)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
   
 }
-
-
 //重写父类方法
 -(void)creatNavigationLeftBar
 {
@@ -187,15 +166,5 @@
     [super didReceiveMemoryWarning];
   
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

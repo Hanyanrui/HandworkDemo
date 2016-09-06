@@ -367,12 +367,26 @@
 		3F003DA31D7AAD1600E35471 /* owl-login-arm-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F003C3F1D7AAD1600E35471 /* owl-login-arm-right@2x.png */; };
 		3F003DA41D7AAD1600E35471 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F003C411D7AAD1600E35471 /* Contents.json */; };
 		3F003DA51D7AAD1600E35471 /* owl-login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F003C421D7AAD1600E35471 /* owl-login@2x.png */; };
-		3F003DB71D7AAE4000E35471 /* AttentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F003DB61D7AAE4000E35471 /* AttentionViewController.m */; };
 		3F003DCA1D7ADB7400E35471 /* MemersOpenReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F003DC91D7ADB7400E35471 /* MemersOpenReusableView.m */; };
 		3F1058ED1D7EBD27000DD913 /* VerifyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1058EC1D7EBD27000DD913 /* VerifyRequest.m */; };
 		3F1058F11D7EBD9B000DD913 /* VerifyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1058F01D7EBD9B000DD913 /* VerifyData.m */; };
 		3F1058F41D7EBE19000DD913 /* RegistData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1058F31D7EBE19000DD913 /* RegistData.m */; };
 		3F1058F71D7EBF32000DD913 /* RegistRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1058F61D7EBF32000DD913 /* RegistRequest.m */; };
+		3F1058FA1D7ECE8D000DD913 /* qq.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1058F81D7ECE8D000DD913 /* qq.png */; };
+		3F1058FB1D7ECE8D000DD913 /* weibo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1058F91D7ECE8D000DD913 /* weibo.png */; };
+		3F1058FD1D7ECFE7000DD913 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1058FC1D7ECFE7000DD913 /* back.png */; };
+		3F1059041D7EDD4E000DD913 /* LoginData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1059031D7EDD4E000DD913 /* LoginData.m */; };
+		3F1059071D7EDE24000DD913 /* LoginDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1059061D7EDE24000DD913 /* LoginDataModel.m */; };
+		3F10590A1D7EE0B8000DD913 /* unCircleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1059091D7EE0B8000DD913 /* unCircleModel.m */; };
+		3F1059111D7EE1E4000DD913 /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1059101D7EE1E4000DD913 /* LoginRequest.m */; };
+		3F1059351D7EF979000DD913 /* AttentionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1059341D7EF979000DD913 /* AttentionData.m */; };
+		3F1059381D7EFA2B000DD913 /* AttentionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1059371D7EFA2B000DD913 /* AttentionModel.m */; };
+		3F10593B1D7EFC06000DD913 /* CourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F10593A1D7EFC06000DD913 /* CourseModel.m */; };
+		3F10593F1D7EFCFA000DD913 /* AttentionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F10593E1D7EFCFA000DD913 /* AttentionRequest.m */; };
+		3F1059451D7F001F000DD913 /* AttentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1059441D7F001F000DD913 /* AttentionViewController.m */; };
+		3F1059491D7F06DA000DD913 /* AttentionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1059481D7F06DA000DD913 /* AttentionCell.m */; };
+		3F10594C1D7F1346000DD913 /* FollowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F10594B1D7F1346000DD913 /* FollowModel.m */; };
+		3F10594F1D7F13D7000DD913 /* CircleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F10594E1D7F13D7000DD913 /* CircleModel.m */; };
 		3F12F5361D7DB0E900FEE8E7 /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F12F5351D7DB0E900FEE8E7 /* ActionViewController.m */; };
 		3F12F5491D7DB70100FEE8E7 /* ActionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F12F5481D7DB70100FEE8E7 /* ActionRequest.m */; };
 		3F12F5501D7DB76A00FEE8E7 /* ActionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F12F54C1D7DB76A00FEE8E7 /* ActionData.m */; };
@@ -787,8 +801,6 @@
 		3F003C3F1D7AAD1600E35471 /* owl-login-arm-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "owl-login-arm-right@2x.png"; sourceTree = "<group>"; };
 		3F003C411D7AAD1600E35471 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		3F003C421D7AAD1600E35471 /* owl-login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "owl-login@2x.png"; sourceTree = "<group>"; };
-		3F003DB51D7AAE4000E35471 /* AttentionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionViewController.h; sourceTree = "<group>"; };
-		3F003DB61D7AAE4000E35471 /* AttentionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionViewController.m; sourceTree = "<group>"; };
 		3F003DC81D7ADB7400E35471 /* MemersOpenReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemersOpenReusableView.h; sourceTree = "<group>"; };
 		3F003DC91D7ADB7400E35471 /* MemersOpenReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemersOpenReusableView.m; sourceTree = "<group>"; };
 		3F1058EB1D7EBD27000DD913 /* VerifyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyRequest.h; sourceTree = "<group>"; };
@@ -799,6 +811,33 @@
 		3F1058F31D7EBE19000DD913 /* RegistData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistData.m; sourceTree = "<group>"; };
 		3F1058F51D7EBF32000DD913 /* RegistRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistRequest.h; sourceTree = "<group>"; };
 		3F1058F61D7EBF32000DD913 /* RegistRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistRequest.m; sourceTree = "<group>"; };
+		3F1058F81D7ECE8D000DD913 /* qq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qq.png; sourceTree = "<group>"; };
+		3F1058F91D7ECE8D000DD913 /* weibo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weibo.png; sourceTree = "<group>"; };
+		3F1058FC1D7ECFE7000DD913 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		3F1059021D7EDD4E000DD913 /* LoginData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginData.h; sourceTree = "<group>"; };
+		3F1059031D7EDD4E000DD913 /* LoginData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginData.m; sourceTree = "<group>"; };
+		3F1059051D7EDE24000DD913 /* LoginDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginDataModel.h; sourceTree = "<group>"; };
+		3F1059061D7EDE24000DD913 /* LoginDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginDataModel.m; sourceTree = "<group>"; };
+		3F1059081D7EE0B8000DD913 /* unCircleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unCircleModel.h; sourceTree = "<group>"; };
+		3F1059091D7EE0B8000DD913 /* unCircleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = unCircleModel.m; sourceTree = "<group>"; };
+		3F10590F1D7EE1E4000DD913 /* LoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequest.h; sourceTree = "<group>"; };
+		3F1059101D7EE1E4000DD913 /* LoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequest.m; sourceTree = "<group>"; };
+		3F1059331D7EF979000DD913 /* AttentionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionData.h; sourceTree = "<group>"; };
+		3F1059341D7EF979000DD913 /* AttentionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionData.m; sourceTree = "<group>"; };
+		3F1059361D7EFA2B000DD913 /* AttentionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionModel.h; sourceTree = "<group>"; };
+		3F1059371D7EFA2B000DD913 /* AttentionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionModel.m; sourceTree = "<group>"; };
+		3F1059391D7EFC06000DD913 /* CourseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseModel.h; sourceTree = "<group>"; };
+		3F10593A1D7EFC06000DD913 /* CourseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseModel.m; sourceTree = "<group>"; };
+		3F10593D1D7EFCFA000DD913 /* AttentionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionRequest.h; sourceTree = "<group>"; };
+		3F10593E1D7EFCFA000DD913 /* AttentionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionRequest.m; sourceTree = "<group>"; };
+		3F1059431D7F001F000DD913 /* AttentionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionViewController.h; sourceTree = "<group>"; };
+		3F1059441D7F001F000DD913 /* AttentionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionViewController.m; sourceTree = "<group>"; };
+		3F1059471D7F06DA000DD913 /* AttentionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionCell.h; sourceTree = "<group>"; };
+		3F1059481D7F06DA000DD913 /* AttentionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionCell.m; sourceTree = "<group>"; };
+		3F10594A1D7F1346000DD913 /* FollowModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowModel.h; sourceTree = "<group>"; };
+		3F10594B1D7F1346000DD913 /* FollowModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowModel.m; sourceTree = "<group>"; };
+		3F10594D1D7F13D7000DD913 /* CircleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleModel.h; sourceTree = "<group>"; };
+		3F10594E1D7F13D7000DD913 /* CircleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleModel.m; sourceTree = "<group>"; };
 		3F12F5341D7DB0E900FEE8E7 /* ActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionViewController.h; sourceTree = "<group>"; };
 		3F12F5351D7DB0E900FEE8E7 /* ActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionViewController.m; sourceTree = "<group>"; };
 		3F12F5471D7DB70100FEE8E7 /* ActionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionRequest.h; sourceTree = "<group>"; };
@@ -955,8 +994,8 @@
 		3F003A4C1D7A83AC00E35471 /* AttentionVC */ = {
 			isa = PBXGroup;
 			children = (
-				3F003DB51D7AAE4000E35471 /* AttentionViewController.h */,
-				3F003DB61D7AAE4000E35471 /* AttentionViewController.m */,
+				3F1059431D7F001F000DD913 /* AttentionViewController.h */,
+				3F1059441D7F001F000DD913 /* AttentionViewController.m */,
 			);
 			path = AttentionVC;
 			sourceTree = "<group>";
@@ -2396,6 +2435,9 @@
 		3F003C311D7AAD1600E35471 /* 素材 */ = {
 			isa = PBXGroup;
 			children = (
+				3F1058FC1D7ECFE7000DD913 /* back.png */,
+				3F1058F81D7ECE8D000DD913 /* qq.png */,
+				3F1058F91D7ECE8D000DD913 /* weibo.png */,
 				3FFF59681D7E70A700A60174 /* registerBackground@2x.jpg */,
 				3FFF59631D7E55C800A60174 /* loginBackground@2x.jpg */,
 				3F19148D1D7C6106001E90D0 /* icon-yiqiandao_@2x.png */,
@@ -2475,6 +2517,7 @@
 		3F003DC11D7AD61600E35471 /* ItemVCView */ = {
 			isa = PBXGroup;
 			children = (
+				3F1059461D7F06C6000DD913 /* AttentionView */,
 				3F12F5521D7DB8A800FEE8E7 /* ActionView */,
 				3F2A6ED61D7D5C8600B69B99 /* ExpertManView */,
 				3F003DC21D7AD61600E35471 /* HandpickView */,
@@ -2513,6 +2556,7 @@
 		3F003DCE1D7ADFAE00E35471 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3F1059011D7EDD3C000DD913 /* LoginModel */,
 				3F1058EE1D7EBD9B000DD913 /* RegistModel */,
 				3F003DCF1D7ADFAE00E35471 /* HomeVCModel */,
 			);
@@ -2530,6 +2574,7 @@
 		3F003DD01D7ADFAE00E35471 /* ItemVCModel */ = {
 			isa = PBXGroup;
 			children = (
+				3F10592F1D7EF925000DD913 /* AttentionModel */,
 				3F12F54A1D7DB76A00FEE8E7 /* ActiionModel */,
 				3F2A6EAF1D7D484500B69B99 /* ExpertManModel */,
 				3F46204E1D7BEF0300058AB7 /* HandpickModel */,
@@ -2557,6 +2602,63 @@
 				3F1058F31D7EBE19000DD913 /* RegistData.m */,
 			);
 			path = RegistModel;
+			sourceTree = "<group>";
+		};
+		3F1059011D7EDD3C000DD913 /* LoginModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F1059021D7EDD4E000DD913 /* LoginData.h */,
+				3F1059031D7EDD4E000DD913 /* LoginData.m */,
+				3F1059051D7EDE24000DD913 /* LoginDataModel.h */,
+				3F1059061D7EDE24000DD913 /* LoginDataModel.m */,
+				3F1059081D7EE0B8000DD913 /* unCircleModel.h */,
+				3F1059091D7EE0B8000DD913 /* unCircleModel.m */,
+			);
+			path = LoginModel;
+			sourceTree = "<group>";
+		};
+		3F10590E1D7EE1D0000DD913 /* LoginVCRequest */ = {
+			isa = PBXGroup;
+			children = (
+				3F10590F1D7EE1E4000DD913 /* LoginRequest.h */,
+				3F1059101D7EE1E4000DD913 /* LoginRequest.m */,
+			);
+			path = LoginVCRequest;
+			sourceTree = "<group>";
+		};
+		3F10592F1D7EF925000DD913 /* AttentionModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F1059331D7EF979000DD913 /* AttentionData.h */,
+				3F1059341D7EF979000DD913 /* AttentionData.m */,
+				3F1059361D7EFA2B000DD913 /* AttentionModel.h */,
+				3F1059371D7EFA2B000DD913 /* AttentionModel.m */,
+				3F1059391D7EFC06000DD913 /* CourseModel.h */,
+				3F10593A1D7EFC06000DD913 /* CourseModel.m */,
+				3F10594A1D7F1346000DD913 /* FollowModel.h */,
+				3F10594B1D7F1346000DD913 /* FollowModel.m */,
+				3F10594D1D7F13D7000DD913 /* CircleModel.h */,
+				3F10594E1D7F13D7000DD913 /* CircleModel.m */,
+			);
+			path = AttentionModel;
+			sourceTree = "<group>";
+		};
+		3F10593C1D7EFCE0000DD913 /* AttentionVCRequest */ = {
+			isa = PBXGroup;
+			children = (
+				3F10593D1D7EFCFA000DD913 /* AttentionRequest.h */,
+				3F10593E1D7EFCFA000DD913 /* AttentionRequest.m */,
+			);
+			path = AttentionVCRequest;
+			sourceTree = "<group>";
+		};
+		3F1059461D7F06C6000DD913 /* AttentionView */ = {
+			isa = PBXGroup;
+			children = (
+				3F1059471D7F06DA000DD913 /* AttentionCell.h */,
+				3F1059481D7F06DA000DD913 /* AttentionCell.m */,
+			);
+			path = AttentionView;
 			sourceTree = "<group>";
 		};
 		3F12F5461D7DB70100FEE8E7 /* ActionVCRequest */ = {
@@ -2744,6 +2846,7 @@
 			children = (
 				3F4620751D7BF6D100058AB7 /* RequestDataTool.h */,
 				3F4620761D7BF6D100058AB7 /* RequestDataTool.m */,
+				3F10590E1D7EE1D0000DD913 /* LoginVCRequest */,
 				3F1058EA1D7EBD27000DD913 /* RegisetVCRequest */,
 				3F46206C1D7BF48800058AB7 /* HomeVCRequest */,
 			);
@@ -2761,6 +2864,7 @@
 		3F46206D1D7BF48800058AB7 /* ItemVCRequest */ = {
 			isa = PBXGroup;
 			children = (
+				3F10593C1D7EFCE0000DD913 /* AttentionVCRequest */,
 				3F12F5461D7DB70100FEE8E7 /* ActionVCRequest */,
 				3F2A6EAB1D7D475C00B69B99 /* ExpertManVCRequest */,
 				3F46206E1D7BF48800058AB7 /* HandpicVCRequest */,
@@ -3141,6 +3245,7 @@
 				3F003CF71D7AAD1600E35471 /* newfeature_01_736@3x.jpg in Resources */,
 				3F003C921D7AAD1600E35471 /* editBtn@2x.png in Resources */,
 				3F003D111D7AAD1600E35471 /* Contents.json in Resources */,
+				3F1058FD1D7ECFE7000DD913 /* back.png in Resources */,
 				3F003CD81D7AAD1600E35471 /* loading_2@3x.png in Resources */,
 				3F003CE41D7AAD1600E35471 /* loading_6@3x.png in Resources */,
 				3F003D781D7AAD1600E35471 /* Warning@2x.png in Resources */,
@@ -3171,6 +3276,7 @@
 				3F003C481D7AAD1600E35471 /* Contents.json in Resources */,
 				3F003CBD1D7AAD1600E35471 /* Contents.json in Resources */,
 				3F003CD11D7AAD1600E35471 /* loading_1@2x.png in Resources */,
+				3F1058FA1D7ECE8D000DD913 /* qq.png in Resources */,
 				3F003C5F1D7AAD1600E35471 /* AppIcon60x60@2x.png in Resources */,
 				3F003C981D7AAD1600E35471 /* friendsRecommentIcon.png in Resources */,
 				3F5D0E241D799CA800735890 /* Assets.xcassets in Resources */,
@@ -3257,6 +3363,7 @@
 				3F003D2D1D7AAD1600E35471 /* sgk_course_cate_meishiyuanyi_selected.png in Resources */,
 				3F003D701D7AAD1600E35471 /* Text Field@2x.png in Resources */,
 				3F003D961D7AAD1600E35471 /* Contents.json in Resources */,
+				3F1058FB1D7ECE8D000DD913 /* weibo.png in Resources */,
 				3F003D4C1D7AAD1600E35471 /* Contents.json in Resources */,
 				3F003D261D7AAD1600E35471 /* Contents.json in Resources */,
 				3FFF59691D7E70A700A60174 /* registerBackground@2x.jpg in Resources */,
@@ -3442,14 +3549,17 @@
 				3F2A6EB21D7D486D00B69B99 /* ExpertManData.m in Sources */,
 				3F5D11951D79B7A000735890 /* ImageViewController.m in Sources */,
 				3F5D11991D79C3C200735890 /* TabBarViewController.m in Sources */,
+				3F10594C1D7F1346000DD913 /* FollowModel.m in Sources */,
+				3F10593B1D7EFC06000DD913 /* CourseModel.m in Sources */,
 				3F003A2D1D7A708200E35471 /* TeachViewController.m in Sources */,
-				3F003DB71D7AAE4000E35471 /* AttentionViewController.m in Sources */,
+				3F10590A1D7EE0B8000DD913 /* unCircleModel.m in Sources */,
 				3F4620521D7BEF0300058AB7 /* SlideModel.m in Sources */,
 				3F5D11A91D79C6E500735890 /* MineViewController.m in Sources */,
 				3FFF59671D7E6FD900A60174 /* RegistViewController.m in Sources */,
 				3F5D0E1C1D799CA800735890 /* AppDelegate.m in Sources */,
 				3F2A6EBA1D7D4D7500B69B99 /* DataModel.m in Sources */,
 				3F2A6EAE1D7D478200B69B99 /* ExpertManRequest.m in Sources */,
+				3F1059351D7EF979000DD913 /* AttentionData.m in Sources */,
 				3F12F5491D7DB70100FEE8E7 /* ActionRequest.m in Sources */,
 				3F5D0E401D79A7B400735890 /* GuideViewController.m in Sources */,
 				3F12F5551D7DB8BE00FEE8E7 /* ActionCell.m in Sources */,
@@ -3461,10 +3571,15 @@
 				3FFF59621D7E513400A60174 /* LoginViewController.m in Sources */,
 				3F2A6ED21D7D5C6A00B69B99 /* MembersOpenedCell.m in Sources */,
 				3F003A361D7A71CF00E35471 /* FairViewController.m in Sources */,
+				3F10593F1D7EFCFA000DD913 /* AttentionRequest.m in Sources */,
 				3F4620681D7BF3C400058AB7 /* MembersOpendModel.m in Sources */,
+				3F1059041D7EDD4E000DD913 /* LoginData.m in Sources */,
 				3F2A6ED41D7D5C6A00B69B99 /* NavigationCell.m in Sources */,
 				3F2A6ED01D7D5C6A00B69B99 /* HotspotCell.m in Sources */,
 				3F4620551D7BEF2700058AB7 /* HandpickData.m in Sources */,
+				3F1059491D7F06DA000DD913 /* AttentionCell.m in Sources */,
+				3F10594F1D7F13D7000DD913 /* CircleModel.m in Sources */,
+				3F1059381D7EFA2B000DD913 /* AttentionModel.m in Sources */,
 				3F46205F1D7BF28D00058AB7 /* NavigationModel.m in Sources */,
 				3F4620741D7BF63900058AB7 /* HandpicRequest.m in Sources */,
 				3F4620711D7BF5E900058AB7 /* GuideTool.m in Sources */,
@@ -3475,6 +3590,7 @@
 				3F2A6EDD1D7D5CD500B69B99 /* ExpertManCell.m in Sources */,
 				3F4620651D7BF34900058AB7 /* HotTopicModel.m in Sources */,
 				3F003A331D7A71A700E35471 /* HandGroupViewController.m in Sources */,
+				3F1059111D7EE1E4000DD913 /* LoginRequest.m in Sources */,
 				3F1058ED1D7EBD27000DD913 /* VerifyRequest.m in Sources */,
 				3F003A391D7A7E9700E35471 /* FatherViewController.m in Sources */,
 				3F003A431D7A81D000E35471 /* HomeViewController.m in Sources */,
@@ -3484,6 +3600,8 @@
 				3F1058F41D7EBE19000DD913 /* RegistData.m in Sources */,
 				3F4620771D7BF6D100058AB7 /* RequestDataTool.m in Sources */,
 				3F12F5501D7DB76A00FEE8E7 /* ActionData.m in Sources */,
+				3F1059071D7EDE24000DD913 /* LoginDataModel.m in Sources */,
+				3F1059451D7F001F000DD913 /* AttentionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
