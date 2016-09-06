@@ -98,7 +98,6 @@
    [_host_picThreeImage sd_setImageWithURL:[NSURL URLWithString:model03.host_pic]];
     if ([model.guan_status isEqualToString:@"1"])
     {
-        
         _attentionBtn.layer.borderColor=[[UIColor grayColor] CGColor];
         _attentionBtn.selected=YES;
 

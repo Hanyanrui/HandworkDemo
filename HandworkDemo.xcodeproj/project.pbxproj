@@ -409,6 +409,10 @@
 		3F5D11951D79B7A000735890 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5D11941D79B7A000735890 /* ImageViewController.m */; };
 		3F5D11991D79C3C200735890 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5D11981D79C3C200735890 /* TabBarViewController.m */; };
 		3F5D11A91D79C6E500735890 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5D11A81D79C6E500735890 /* MineViewController.m */; };
+		3FFF59621D7E513400A60174 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF59611D7E513400A60174 /* LoginViewController.m */; };
+		3FFF59641D7E55C800A60174 /* loginBackground@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FFF59631D7E55C800A60174 /* loginBackground@2x.jpg */; };
+		3FFF59671D7E6FD900A60174 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF59661D7E6FD900A60174 /* RegistViewController.m */; };
+		3FFF59691D7E70A700A60174 /* registerBackground@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FFF59681D7E70A700A60174 /* registerBackground@2x.jpg */; };
 		C3812D097EE432FA678A1B4F /* libPods-HandworkDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3A7402913B0ABD0316AFDBB /* libPods-HandworkDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -857,6 +861,12 @@
 		3F5D11981D79C3C200735890 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		3F5D11A71D79C6E500735890 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		3F5D11A81D79C6E500735890 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		3FFF59601D7E513400A60174 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		3FFF59611D7E513400A60174 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		3FFF59631D7E55C800A60174 /* loginBackground@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "loginBackground@2x.jpg"; sourceTree = "<group>"; };
+		3FFF59651D7E6FD900A60174 /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
+		3FFF59661D7E6FD900A60174 /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
+		3FFF59681D7E70A700A60174 /* registerBackground@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "registerBackground@2x.jpg"; sourceTree = "<group>"; };
 		5904001F0D30597352363872 /* Pods-HandworkDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandworkDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-HandworkDemo/Pods-HandworkDemo.release.xcconfig"; sourceTree = "<group>"; };
 		BB1DA3D18AB70ED29E1BD26D /* Pods-HandworkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HandworkDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HandworkDemo/Pods-HandworkDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		F3A7402913B0ABD0316AFDBB /* libPods-HandworkDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HandworkDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2374,6 +2384,8 @@
 		3F003C311D7AAD1600E35471 /* 素材 */ = {
 			isa = PBXGroup;
 			children = (
+				3FFF59681D7E70A700A60174 /* registerBackground@2x.jpg */,
+				3FFF59631D7E55C800A60174 /* loginBackground@2x.jpg */,
 				3F19148D1D7C6106001E90D0 /* icon-yiqiandao_@2x.png */,
 				3F19148E1D7C6106001E90D0 /* icon_qiandao_@2x.png */,
 				3F003C321D7AAD1600E35471 /* Contents.json */,
@@ -2811,6 +2823,7 @@
 				3F5D119B1D79C60E00735890 /* HandGruopVC */,
 				3F5D119A1D79C60E00735890 /* FairVC */,
 				3F5D119C1D79C60E00735890 /* MineVC */,
+				3FFF595F1D7E510000A60174 /* LoginVC */,
 			);
 			path = VCS;
 			sourceTree = "<group>";
@@ -2876,6 +2889,18 @@
 				3F003A2C1D7A708200E35471 /* TeachViewController.m */,
 			);
 			path = TeachVC;
+			sourceTree = "<group>";
+		};
+		3FFF595F1D7E510000A60174 /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				3FFF59601D7E513400A60174 /* LoginViewController.h */,
+				3FFF59611D7E513400A60174 /* LoginViewController.m */,
+				3FFF59651D7E6FD900A60174 /* RegistViewController.h */,
+				3FFF59661D7E6FD900A60174 /* RegistViewController.m */,
+			);
+			name = LoginVC;
+			path = MineVC/LoginVC;
 			sourceTree = "<group>";
 		};
 		43F67982B1083C2F0C087A23 /* Pods */ = {
@@ -3198,6 +3223,7 @@
 				3F003D961D7AAD1600E35471 /* Contents.json in Resources */,
 				3F003D4C1D7AAD1600E35471 /* Contents.json in Resources */,
 				3F003D261D7AAD1600E35471 /* Contents.json in Resources */,
+				3FFF59691D7E70A700A60174 /* registerBackground@2x.jpg in Resources */,
 				3F003D6D1D7AAD1600E35471 /* sgk_course_time_week_selected.png in Resources */,
 				3F003DA21D7AAD1600E35471 /* Contents.json in Resources */,
 				3F003CC21D7AAD1600E35471 /* Contents.json in Resources */,
@@ -3246,6 +3272,7 @@
 				3F003D601D7AAD1600E35471 /* Contents.json in Resources */,
 				3F003CC11D7AAD1600E35471 /* Image@2x.png in Resources */,
 				3F003D6A1D7AAD1600E35471 /* Contents.json in Resources */,
+				3FFF59641D7E55C800A60174 /* loginBackground@2x.jpg in Resources */,
 				3F003DA51D7AAD1600E35471 /* owl-login@2x.png in Resources */,
 				3F003C8A1D7AAD1600E35471 /* close.png in Resources */,
 				3F003D271D7AAD1600E35471 /* sgk_course_cate_meironghufu.png in Resources */,
@@ -3383,6 +3410,7 @@
 				3F003DB71D7AAE4000E35471 /* AttentionViewController.m in Sources */,
 				3F4620521D7BEF0300058AB7 /* SlideModel.m in Sources */,
 				3F5D11A91D79C6E500735890 /* MineViewController.m in Sources */,
+				3FFF59671D7E6FD900A60174 /* RegistViewController.m in Sources */,
 				3F5D0E1C1D799CA800735890 /* AppDelegate.m in Sources */,
 				3F2A6EBA1D7D4D7500B69B99 /* DataModel.m in Sources */,
 				3F2A6EAE1D7D478200B69B99 /* ExpertManRequest.m in Sources */,
@@ -3394,6 +3422,7 @@
 				3F4620621D7BF2FF00058AB7 /* AdvanceModel.m in Sources */,
 				3F1918D91D7C4BD7009A9F46 /* SectionOneHeadView.m in Sources */,
 				3F003A261D7A527B00E35471 /* NavViewController.m in Sources */,
+				3FFF59621D7E513400A60174 /* LoginViewController.m in Sources */,
 				3F2A6ED21D7D5C6A00B69B99 /* MembersOpenedCell.m in Sources */,
 				3F003A361D7A71CF00E35471 /* FairViewController.m in Sources */,
 				3F4620681D7BF3C400058AB7 /* MembersOpendModel.m in Sources */,

@@ -112,7 +112,7 @@ static NSString * const reuseId = @"reuseIdentifier";
     cell.attentionBtn.tag=[model.user_id integerValue];
     cell.model=model;
     [cell attentionBtnClick:^(NSInteger index) {
-        NSLog(@"%ld",index);
+        [self.navigationController pushViewController:[LoginViewController new] animated:YES];
     }];
     return cell;
 }
