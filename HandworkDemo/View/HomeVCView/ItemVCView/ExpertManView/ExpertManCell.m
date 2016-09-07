@@ -44,10 +44,10 @@
 
     
     UIButton *button=[UIButton buttonWithType:(UIButtonTypeCustom)];
-    [button setTitle:@"+关注" forState:(UIControlStateNormal)];
     [button addTarget:self action:@selector(guanzhu:) forControlEvents:(UIControlEventTouchUpInside)];
     [button setTitleColor:RedColor forState:(UIControlStateNormal)];
     [button setTitleColor:[UIColor grayColor] forState:(UIControlStateSelected)];
+    button.titleLabel.font=[UIFont systemFontOfSize:15];
     button.titleLabel.adjustsFontSizeToFitWidth = YES;
     button.layer.cornerRadius=5;
      button.layer.borderWidth=1.5;
@@ -72,7 +72,7 @@
     
     countLB.sd_layout.leftEqualToView(nick_nameLB).topSpaceToView(nick_nameLB,10).widthRatioToView(self.contentView,0.6);
     
-    button.sd_layout.rightSpaceToView(self.contentView,10).centerYEqualToView(avatarImage).widthRatioToView(avatarImage,0.6).heightRatioToView(avatarImage,0.4);
+    button.sd_layout.rightSpaceToView(self.contentView,5).centerYEqualToView(avatarImage).widthRatioToView(avatarImage,0.6).heightRatioToView(avatarImage,0.4);
     
      host_picOneImage.sd_layout.topSpaceToView(avatarImage,10).leftEqualToView(self.contentView). widthRatioToView(self.contentView,0.33).heightEqualToWidth();
     
@@ -87,6 +87,8 @@
     {
         _model=model;
     }
+    
+    
     [_avatarImage sd_setImageWithURL:[NSURL URLWithString:model.avatar]];
     _nick_nameLB.text=model.nick_name;
     _countLB.text=[NSString stringWithFormat:@"%@图文教程|%@视频教程|%@手工圈",model.course_count,model.video_count,model.opus_count];
@@ -96,24 +98,28 @@
     [_host_picTwoImage sd_setImageWithURL:[NSURL URLWithString:model02.host_pic]];
     ListModel *model03=model.list[2];
    [_host_picThreeImage sd_setImageWithURL:[NSURL URLWithString:model03.host_pic]];
+    _attentionBtn.titleLabel.adjustsFontSizeToFitWidth = YES;
     if ([model.guan_status isEqualToString:@"1"])
     {
+
+        [_attentionBtn setTitle:@"已关注" forState:(UIControlStateNormal)];
         _attentionBtn.layer.borderColor=[[UIColor grayColor] CGColor];
         _attentionBtn.selected=YES;
 
     }
     else
     {
+        [_attentionBtn setTitle:@"+关注" forState:(UIControlStateNormal)];
         _attentionBtn.layer.borderColor=[RedColor CGColor];
         _attentionBtn.selected=NO;
-
     }
+   
 }
 -(void)guanzhu:(UIButton*)sender
 {
     if (_block)
     {
-        _block(sender.tag);
+        _block([_model.user_id integerValue]);
     }
 
 }

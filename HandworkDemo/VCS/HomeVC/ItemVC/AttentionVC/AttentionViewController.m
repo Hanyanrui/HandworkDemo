@@ -111,7 +111,7 @@ static NSString * const reuseId = @"reuseIdentifier";
     {
         return kMainW/5+65;
     }
-    else if ([model.type isEqualToString:@"course"])
+    else
     {
     
         return kMainW*3/10+65;
@@ -124,13 +124,61 @@ static NSString * const reuseId = @"reuseIdentifier";
     
     
     
-    return kMainH/4;
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     AttentionCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseId forIndexPath:indexPath];
     cell.model=self.dataArr[indexPath.row];
+    
+    __weak typeof(self) weakSelf = self;
+    [cell guanzhuBtnClickWithBlock:^(NSInteger index) {
+    
+        
+        NSString *info=[[NSUserDefaults standardUserDefaults]objectForKey:@"info"];
+        if (info)
+        {
+            [weakSelf addGauZhuRequest:cell.model withIndex:indexPath];
+        }
+        else
+        {
+            [weakSelf.navigationController pushViewController:[LoginViewController new] animated:YES];
+        }
+    }];
+    
+    [cell changePageWithBlock:^(NSInteger index) {
+        NSLog(@"跳转页面");
+    }];
+    
     return cell;
+}
+-(void)addGauZhuRequest:(AttentionModel*)model withIndex:(NSIndexPath*)indexPath
+{
+   IndicaterStart
+    NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:model.user_id,@"uid",@"20",@"vid", nil];
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [AddGuanZhuRequest getDataWithDic:dic withBlock:^(AddGuanZhuData *data) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                AttentionModel *model01=self.dataArr[indexPath.row];
+                FollowModel *model02=[model01.follow firstObject];
+                if ([model02.follow_status isEqualToString:@"0"])
+                {
+                    model02.follow_status=@"1";
+                }
+                else
+                {
+                    model02.follow_status=@"0";
+                }
+                IndicaterEnd
+                [weakSelf.tableView reloadData];
+            });
+ 
+        } withErrorBlock:^(NSError *error) {
+            NSLog(@"失败");
+        }];
+    });
 }
 
 

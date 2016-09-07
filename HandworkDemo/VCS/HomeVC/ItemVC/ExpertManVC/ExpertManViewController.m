@@ -56,7 +56,7 @@ static NSString * const reuseId = @"reuseIdentifier";
     [self.dataArr removeAllObjects];
      __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:@"act",@"up",@"vid",@"20", nil];
+        NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:@"up",@"act",@"20",@"vid", nil];
       [ExpertManRequest getDataWithDic:dic withBlock:^(ExpertManData *data) {
           [weakSelf.dataArr addObjectsFromArray:data.data];
           [weakSelf.tableView.mj_header endRefreshing];
@@ -80,7 +80,7 @@ static NSString * const reuseId = @"reuseIdentifier";
         
         DataModel *model= [self.dataArr lastObject];
         NSString *last_id=model.course_time;
-        NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:@"act",@"down",@"vid",@"20",@"last_id",last_id, nil];
+        NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:@"down",@"act",@"20",@"vid",last_id,@"last_id", nil];
         [ExpertManRequest getDataWithDic:dic withBlock:^(ExpertManData *data) {
             [weakSelf.dataArr addObjectsFromArray:data.data];
             [weakSelf.tableView.mj_footer endRefreshing];
@@ -107,16 +107,55 @@ static NSString * const reuseId = @"reuseIdentifier";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+     __weak typeof(self) weakSelf = self;
     ExpertManCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseId forIndexPath:indexPath];
     DataModel *model=self.dataArr[indexPath.row];
     cell.attentionBtn.tag=[model.user_id integerValue];
+
     cell.model=model;
     [cell attentionBtnClick:^(NSInteger index) {
-        [self.navigationController pushViewController:[LoginViewController new] animated:YES];
+      
+        NSString *info=[[NSUserDefaults standardUserDefaults]objectForKey:@"info"];
+        if (info)
+        {
+            [weakSelf addGauZhuRequest:model withIndex:indexPath];
+        }
+        else
+        {
+          [weakSelf.navigationController pushViewController:[LoginViewController new] animated:YES];
+        }
+        
+    
+        
     }];
     return cell;
 }
-
+-(void)addGauZhuRequest:(DataModel*)model withIndex:(NSIndexPath*)indexPath
+{
+    IndicaterStart
+    NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:model.user_id,@"uid",@"20",@"vid", nil];
+   __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [AddGuanZhuRequest getDataWithDic:dic withBlock:^(AddGuanZhuData *data) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                DataModel *model= self.dataArr[indexPath.row];
+                if ([model.guan_status isEqualToString:@"0"])
+                {
+                    model.guan_status=@"1";
+                }
+                else
+                {
+                 model.guan_status=@"0";
+                }
+                IndicaterEnd
+                [weakSelf.tableView reloadData];
+            });
+            
+        } withErrorBlock:^(NSError *error) {
+            NSLog(@"失败");
+        }];
+    });
+}
 
 /*
 // Override to support conditional editing of the table view.

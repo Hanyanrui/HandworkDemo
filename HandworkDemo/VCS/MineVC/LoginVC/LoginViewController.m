@@ -138,9 +138,9 @@
         
         [LoginRequest getDataWithDic:dic withBlock:^(LoginData *data )
          {
-             NSLog(@"%@",data);
              IndicaterEnd
              Alert(data.info);
+             [[NSUserDefaults standardUserDefaults]setObject:data.info forKey:@"info"];
          } withErrorBlock:^(NSError *error) {
          }];
     });

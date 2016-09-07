@@ -81,23 +81,26 @@
     [self.contentView addSubview:timeLb];
     
     
-    
-    
     UIButton *button=[UIButton buttonWithType:(UIButtonTypeCustom)];
-    [button setTitle:@"+关注" forState:(UIControlStateNormal)];
     [button addTarget:self action:@selector(guanzhu:) forControlEvents:(UIControlEventTouchUpInside)];
     [button setTitleColor:RedColor forState:(UIControlStateNormal)];
     [button setTitleColor:[UIColor grayColor] forState:(UIControlStateSelected)];
+    button.titleLabel.font=[UIFont systemFontOfSize:15];
     button.titleLabel.adjustsFontSizeToFitWidth = YES;
     button.layer.cornerRadius=5;
     button.layer.borderWidth=1.5;
     [bgView addSubview:button];
     _guanzhuBtn=button;
+    
     UILabel *nameLB=[[UILabel alloc]initWithFrame:CGRectMake(20+kMainW/10, 20, kMainW-20-kMainW/10, kMainW/15)];
     _nameLB=nameLB;
     [self.contentView addSubview:headImageView];
     [self.contentView addSubview:nameLB];
     
+    
+    
+    UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(changePage:)];
+    [bgView addGestureRecognizer:tap];
     
 
 }
@@ -110,18 +113,14 @@
     [_headImageView sd_setImageWithURL:[NSURL URLWithString:model.head_pic]];
     _lineView.frame=CGRectMake(10+kMainW/20, 0, 1, self.frame.size.height);
     
-    if ([model.event_message isEqualToString:@""] ) {
-         _nameLB.text=[NSString stringWithFormat:@"%@%@",model.user_name,model.event_action];
-    }
-    else
-    {
-        _nameLB.text=[NSString stringWithFormat:@"%@%@%@",model.user_name,model.event_action,model.event_message];
-    }
-    
     if ([model.type isEqualToString:@"follow"])
     {
         FollowModel*model01=  [model.follow firstObject];
         _bgView.frame=CGRectMake(20+kMainW/10, kMainW/10+20, kMainW-20-kMainW/10, kMainW/10+20);
+        
+        _nameLB.text=[NSString stringWithFormat:@"%@%@",model.user_name,model.event_action];
+        
+        _nameLB.text=[NSString stringWithFormat:@"%@%@%@",model.user_name,model.event_action,model.event_message];
         
         [_guanzhuHeadImageView sd_setImageWithURL:[NSURL URLWithString:model01.head_pic]];
         _guanzhuHeadImageView.frame=CGRectMake(10, 10, kMainW/10, kMainW/10);
@@ -138,6 +137,19 @@
         _courseImage.frame=CGRectZero;
         _zhutiNameLB.frame=CGRectZero;
         
+        if ([model01.follow_status isEqualToString:@"1"])
+        {
+            [_guanzhuBtn setTitle:@"已关注" forState:(UIControlStateNormal)];
+            _guanzhuBtn.layer.borderColor=[[UIColor grayColor] CGColor];
+            _guanzhuBtn.selected=YES;
+            
+        }
+        else
+        {
+            [_guanzhuBtn setTitle:@"+关注" forState:(UIControlStateNormal)];
+            _guanzhuBtn.layer.borderColor=[RedColor CGColor];
+            _guanzhuBtn.selected=NO;
+        }
     }
     else if ([model.type isEqualToString:@"course"])
     {
@@ -147,9 +159,10 @@
         _courseImage.frame=CGRectMake(10, 10, kMainW/5, kMainW/5);
         [_courseImage sd_setImageWithURL:[NSURL URLWithString:model01.host_pic]];
         
+        _nameLB.text=[NSString stringWithFormat:@"%@%@%@",model.user_name,model.event_action,model.event_message];
+        
         _zhutiNameLB.text=model01.zhuti;
         _zhutiNameLB.frame=CGRectMake(20+kMainW/5, 10, kMainW*7/10-40, kMainW/5+20-kMainW/12);
-        
         
         [_guanzhuHeadImageView sd_setImageWithURL:[NSURL URLWithString:model01.head_pic]];
         _guanzhuHeadImageView.frame=CGRectMake(kMainW *9/10-30-kMainW/12, kMainW/5+10-kMainW/12, kMainW/12, kMainW/12);
@@ -162,7 +175,6 @@
         
         _guanzhuBtn.frame=CGRectZero;
         
-    
     }
     else
     {
@@ -174,8 +186,7 @@
         
         _zhutiNameLB.text=model01.message;
         _zhutiNameLB.numberOfLines=0;
-      _zhutiNameLB.frame=CGRectMake(20+kMainW/5, 10, kMainW*7/10-40, kMainW/5+20-kMainW/12);
-        
+        _zhutiNameLB.frame=CGRectMake(20+kMainW/5, 10, kMainW*7/10-40, kMainW/5+20-kMainW/12);
         
         [_guanzhuHeadImageView sd_setImageWithURL:[NSURL URLWithString:model01.head_pic]];
         _guanzhuHeadImageView.frame=CGRectMake(kMainW *9/10-30-kMainW/12, kMainW/5+10-kMainW/12, kMainW/12, kMainW/12);
@@ -195,12 +206,46 @@
 }
 -(void)guanzhu:(UIButton*)sender
 {
-
-
-
-
-
+    if (_guanzhu)
+    {
+        _guanzhu([[[_model.follow firstObject] user_id]intValue]);
+    }
 
 }
+-(void)changePage:(UITapGestureRecognizer*)tap
+{
+    if ([_model.type isEqualToString:@"circle"])
+    {
+        if (_changePage)
+        {
+            _changePage([[[_model.circle firstObject] circle_id]integerValue] );
+        }
+    }
+    else if ([_model.type isEqualToString:@"course"])
+    {
+     _changePage([[[_model.course firstObject] hand_id]integerValue] );
+    
+    
+    }
+    
+    
+    
+    
+}
+-(void)guanzhuBtnClickWithBlock:(ClickBlock)block
+{
+    if (block)
+    {
+        _guanzhu=block;
+    }
+}
+-(void)changePageWithBlock:(ClickBlock)block;
+{
 
+    if (block)
+    {
+        _changePage=block;
+    }
+
+}
 @end

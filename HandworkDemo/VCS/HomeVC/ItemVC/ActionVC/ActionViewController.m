@@ -59,8 +59,13 @@ static NSString * const reuseId = @"reuseIdentifier";
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [ActionRequest getDataWithID:@"0" withBlock:^(ActionData *data) {
             [weakSelf.dataArr addObjectsFromArray:data.data];
-            [weakSelf.tableView.mj_header endRefreshing];
-            [weakSelf.tableView reloadData];
+             [weakSelf.tableView.mj_header endRefreshing];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+
+                [weakSelf.tableView reloadData];
+            });
+            
         } withErrorBlock:^(NSError *error) {
             [SVProgressHUD showErrorWithStatus:@"失败了,再来一次！"];
             [weakSelf.tableView.mj_header endRefreshing];
@@ -80,7 +85,10 @@ static NSString * const reuseId = @"reuseIdentifier";
         [ActionRequest getDataWithID:model.actionId withBlock:^(ActionData *data) {
             [weakSelf.dataArr addObjectsFromArray:data.data];
             [weakSelf.tableView.mj_footer endRefreshing];
-            [weakSelf.tableView reloadData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [weakSelf.tableView reloadData];
+            });
         } withErrorBlock:^(NSError *error) {
             [SVProgressHUD showErrorWithStatus:@"失败了,再来一次！"];
             [weakSelf.tableView.mj_footer endRefreshing];

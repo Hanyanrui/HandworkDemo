@@ -72,6 +72,9 @@
 #import "FollowModel.h"
 #import "CircleModel.h"
 #import "Tools.h"
+#import "AddGuanZhuData.h"
+#import "AddGuanZhuRequest.h"
+
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
@@ -106,5 +109,6 @@ indicator.activityIndicatorViewStyle=UIActivityIndicatorViewStyleWhiteLarge;\
 #define RegistUrl @"http://m.shougongke.com/index.php?c=Login&a=register"
 #define LoginUrl  @"http://m.shougongke.com/index.php?c=Login&a=login"
 #define GuanzhuUrl @"http://d.shougongke.com/index.php?c=Mobnotice&a=friends&vid=20"
-
+#define AddGuanzhuUrl @"http://m.shougongke.com/index.php?c=User&a=addGuan"
+#define CancelGuanZhuUrl @"http://m.shougongke.com/index.php?c=User&a=addGuan"
 

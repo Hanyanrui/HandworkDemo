@@ -399,7 +399,6 @@
 		3F2A6EAE1D7D478200B69B99 /* ExpertManRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A6EAD1D7D478200B69B99 /* ExpertManRequest.m */; };
 		3F2A6EB21D7D486D00B69B99 /* ExpertManData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A6EB11D7D486D00B69B99 /* ExpertManData.m */; };
 		3F2A6EBA1D7D4D7500B69B99 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A6EB91D7D4D7500B69B99 /* DataModel.m */; };
-		3F2A6EC01D7D549900B69B99 /* ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A6EBF1D7D549900B69B99 /* ListModel.m */; };
 		3F2A6ECE1D7D5C6A00B69B99 /* AdvanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A6EC31D7D5C6A00B69B99 /* AdvanceCell.m */; };
 		3F2A6ECF1D7D5C6A00B69B99 /* AdvanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2A6EC41D7D5C6A00B69B99 /* AdvanceCell.xib */; };
 		3F2A6ED01D7D5C6A00B69B99 /* HotspotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A6EC61D7D5C6A00B69B99 /* HotspotCell.m */; };
@@ -420,6 +419,9 @@
 		3F4620741D7BF63900058AB7 /* HandpicRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4620731D7BF63900058AB7 /* HandpicRequest.m */; };
 		3F4620771D7BF6D100058AB7 /* RequestDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4620761D7BF6D100058AB7 /* RequestDataTool.m */; };
 		3F49B7F71D7FB3C700D394D0 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F49B7F61D7FB3C700D394D0 /* Tools.m */; };
+		3F49B7FD1D7FF37000D394D0 /* AddGuanZhuRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F49B7FC1D7FF37000D394D0 /* AddGuanZhuRequest.m */; };
+		3F49B8081D7FFAF700D394D0 /* AddGuanZhuData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F49B8071D7FFAF700D394D0 /* AddGuanZhuData.m */; };
+		3F49B80C1D7FFB1000D394D0 /* ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F49B80B1D7FFB1000D394D0 /* ListModel.m */; };
 		3F5D0E191D799CA800735890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5D0E181D799CA800735890 /* main.m */; };
 		3F5D0E1C1D799CA800735890 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5D0E1B1D799CA800735890 /* AppDelegate.m */; };
 		3F5D0E241D799CA800735890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5D0E231D799CA800735890 /* Assets.xcassets */; };
@@ -861,8 +863,6 @@
 		3F2A6EB11D7D486D00B69B99 /* ExpertManData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpertManData.m; sourceTree = "<group>"; };
 		3F2A6EB81D7D4D7500B69B99 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		3F2A6EB91D7D4D7500B69B99 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
-		3F2A6EBE1D7D549900B69B99 /* ListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListModel.h; sourceTree = "<group>"; };
-		3F2A6EBF1D7D549900B69B99 /* ListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListModel.m; sourceTree = "<group>"; };
 		3F2A6EC21D7D5C6A00B69B99 /* AdvanceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvanceCell.h; sourceTree = "<group>"; };
 		3F2A6EC31D7D5C6A00B69B99 /* AdvanceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvanceCell.m; sourceTree = "<group>"; };
 		3F2A6EC41D7D5C6A00B69B99 /* AdvanceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvanceCell.xib; sourceTree = "<group>"; };
@@ -899,6 +899,12 @@
 		3F4620761D7BF6D100058AB7 /* RequestDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestDataTool.m; sourceTree = "<group>"; };
 		3F49B7F51D7FB3C700D394D0 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		3F49B7F61D7FB3C700D394D0 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
+		3F49B7FB1D7FF37000D394D0 /* AddGuanZhuRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddGuanZhuRequest.h; sourceTree = "<group>"; };
+		3F49B7FC1D7FF37000D394D0 /* AddGuanZhuRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddGuanZhuRequest.m; sourceTree = "<group>"; };
+		3F49B8061D7FFAF700D394D0 /* AddGuanZhuData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddGuanZhuData.h; sourceTree = "<group>"; };
+		3F49B8071D7FFAF700D394D0 /* AddGuanZhuData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddGuanZhuData.m; sourceTree = "<group>"; };
+		3F49B80A1D7FFB1000D394D0 /* ListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListModel.h; sourceTree = "<group>"; };
+		3F49B80B1D7FFB1000D394D0 /* ListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListModel.m; sourceTree = "<group>"; };
 		3F5D0E141D799CA800735890 /* HandworkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandworkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5D0E181D799CA800735890 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F5D0E1A1D799CA800735890 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -2706,6 +2712,8 @@
 			children = (
 				3F2A6EAC1D7D478200B69B99 /* ExpertManRequest.h */,
 				3F2A6EAD1D7D478200B69B99 /* ExpertManRequest.m */,
+				3F49B7FB1D7FF37000D394D0 /* AddGuanZhuRequest.h */,
+				3F49B7FC1D7FF37000D394D0 /* AddGuanZhuRequest.m */,
 			);
 			path = ExpertManVCRequest;
 			sourceTree = "<group>";
@@ -2715,19 +2723,11 @@
 			children = (
 				3F2A6EB01D7D486D00B69B99 /* ExpertManData.h */,
 				3F2A6EB11D7D486D00B69B99 /* ExpertManData.m */,
+				3F49B8091D7FFB1000D394D0 /* ListModel */,
+				3F49B8051D7FFAF700D394D0 /* AddGuanZhuData */,
 				3F2A6EB71D7D4D4700B69B99 /* DataModel */,
-				3F2A6EB31D7D489500B69B99 /* ListModel */,
 			);
 			path = ExpertManModel;
-			sourceTree = "<group>";
-		};
-		3F2A6EB31D7D489500B69B99 /* ListModel */ = {
-			isa = PBXGroup;
-			children = (
-				3F2A6EBE1D7D549900B69B99 /* ListModel.h */,
-				3F2A6EBF1D7D549900B69B99 /* ListModel.m */,
-			);
-			path = ListModel;
 			sourceTree = "<group>";
 		};
 		3F2A6EB71D7D4D4700B69B99 /* DataModel */ = {
@@ -2892,6 +2892,24 @@
 				3F49B7F61D7FB3C700D394D0 /* Tools.m */,
 			);
 			path = MeasureTool;
+			sourceTree = "<group>";
+		};
+		3F49B8051D7FFAF700D394D0 /* AddGuanZhuData */ = {
+			isa = PBXGroup;
+			children = (
+				3F49B8061D7FFAF700D394D0 /* AddGuanZhuData.h */,
+				3F49B8071D7FFAF700D394D0 /* AddGuanZhuData.m */,
+			);
+			path = AddGuanZhuData;
+			sourceTree = "<group>";
+		};
+		3F49B8091D7FFB1000D394D0 /* ListModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F49B80A1D7FFB1000D394D0 /* ListModel.h */,
+				3F49B80B1D7FFB1000D394D0 /* ListModel.m */,
+			);
+			path = ListModel;
 			sourceTree = "<group>";
 		};
 		3F5D0E0B1D799CA800735890 = {
@@ -3563,6 +3581,7 @@
 				3F5D11951D79B7A000735890 /* ImageViewController.m in Sources */,
 				3F5D11991D79C3C200735890 /* TabBarViewController.m in Sources */,
 				3F10594C1D7F1346000DD913 /* FollowModel.m in Sources */,
+				3F49B80C1D7FFB1000D394D0 /* ListModel.m in Sources */,
 				3F10593B1D7EFC06000DD913 /* CourseModel.m in Sources */,
 				3F003A2D1D7A708200E35471 /* TeachViewController.m in Sources */,
 				3F10590A1D7EE0B8000DD913 /* unCircleModel.m in Sources */,
@@ -3572,12 +3591,12 @@
 				3F5D0E1C1D799CA800735890 /* AppDelegate.m in Sources */,
 				3F2A6EBA1D7D4D7500B69B99 /* DataModel.m in Sources */,
 				3F2A6EAE1D7D478200B69B99 /* ExpertManRequest.m in Sources */,
+				3F49B7FD1D7FF37000D394D0 /* AddGuanZhuRequest.m in Sources */,
 				3F1059351D7EF979000DD913 /* AttentionData.m in Sources */,
 				3F12F5491D7DB70100FEE8E7 /* ActionRequest.m in Sources */,
 				3F5D0E401D79A7B400735890 /* GuideViewController.m in Sources */,
 				3F12F5551D7DB8BE00FEE8E7 /* ActionCell.m in Sources */,
 				3F003DCA1D7ADB7400E35471 /* MemersOpenReusableView.m in Sources */,
-				3F2A6EC01D7D549900B69B99 /* ListModel.m in Sources */,
 				3F4620621D7BF2FF00058AB7 /* AdvanceModel.m in Sources */,
 				3F1918D91D7C4BD7009A9F46 /* SectionOneHeadView.m in Sources */,
 				3F003A261D7A527B00E35471 /* NavViewController.m in Sources */,
@@ -3613,6 +3632,7 @@
 				3F12F5511D7DB76A00FEE8E7 /* ActionModel.m in Sources */,
 				3F1058F41D7EBE19000DD913 /* RegistData.m in Sources */,
 				3F4620771D7BF6D100058AB7 /* RequestDataTool.m in Sources */,
+				3F49B8081D7FFAF700D394D0 /* AddGuanZhuData.m in Sources */,
 				3F12F5501D7DB76A00FEE8E7 /* ActionData.m in Sources */,
 				3F1059071D7EDE24000DD913 /* LoginDataModel.m in Sources */,
 				3F1059451D7F001F000DD913 /* AttentionViewController.m in Sources */,

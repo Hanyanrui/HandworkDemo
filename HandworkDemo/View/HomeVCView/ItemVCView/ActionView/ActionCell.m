@@ -55,7 +55,6 @@
     {
         _model=model;
     }
-    NSLog(@"%@",model.width);
     CGFloat height=kMainW/[model.width floatValue]*[model.height floatValue];
     _logoImageView.frame=CGRectMake(0, 0, kMainW, height);
     [_logoImageView sd_setImageWithURL:[NSURL URLWithString:model.m_logo]];
