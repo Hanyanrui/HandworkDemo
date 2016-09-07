@@ -11,7 +11,7 @@
 @implementation AttentionRequest
 +(void)getDataWithDic:(NSDictionary*)dic withBlock:(AttentionBlock)block withErrorBlock:(ErrorBlock)failure
 {
-    [RequestDataTool post:GuanzhuUrl params:dic success:^(id responseObj) {
+    [RequestDataTool get:GuanzhuUrl params:dic success:^(id responseObj) {
         
         AttentionData *data=[AttentionData yy_modelWithJSON:responseObj];
         if (block)

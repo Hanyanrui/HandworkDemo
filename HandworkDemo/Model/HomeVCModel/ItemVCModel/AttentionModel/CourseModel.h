@@ -10,7 +10,7 @@
 
 @interface CourseModel : NSObject
 @property(nonatomic,copy)NSString *hand_id;
-@property(nonatomic,copy)NSString *zhuti_name;
+@property(nonatomic,copy)NSString *zhuti;
 @property(nonatomic,copy)NSString *host_pic;
 @property(nonatomic,assign)BOOL visible;
 @property(nonatomic,copy)NSString *user_name;

@@ -419,6 +419,7 @@
 		3F4620711D7BF5E900058AB7 /* GuideTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4620701D7BF5E900058AB7 /* GuideTool.m */; };
 		3F4620741D7BF63900058AB7 /* HandpicRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4620731D7BF63900058AB7 /* HandpicRequest.m */; };
 		3F4620771D7BF6D100058AB7 /* RequestDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4620761D7BF6D100058AB7 /* RequestDataTool.m */; };
+		3F49B7F71D7FB3C700D394D0 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F49B7F61D7FB3C700D394D0 /* Tools.m */; };
 		3F5D0E191D799CA800735890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5D0E181D799CA800735890 /* main.m */; };
 		3F5D0E1C1D799CA800735890 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5D0E1B1D799CA800735890 /* AppDelegate.m */; };
 		3F5D0E241D799CA800735890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5D0E231D799CA800735890 /* Assets.xcassets */; };
@@ -896,6 +897,8 @@
 		3F4620731D7BF63900058AB7 /* HandpicRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandpicRequest.m; sourceTree = "<group>"; };
 		3F4620751D7BF6D100058AB7 /* RequestDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestDataTool.h; sourceTree = "<group>"; };
 		3F4620761D7BF6D100058AB7 /* RequestDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestDataTool.m; sourceTree = "<group>"; };
+		3F49B7F51D7FB3C700D394D0 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		3F49B7F61D7FB3C700D394D0 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		3F5D0E141D799CA800735890 /* HandworkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandworkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5D0E181D799CA800735890 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F5D0E1A1D799CA800735890 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -2826,6 +2829,7 @@
 		3F4620691D7BF48800058AB7 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				3F49B7F41D7FB3C000D394D0 /* MeasureTool */,
 				3F46206A1D7BF48800058AB7 /* GuideTool */,
 				3F46206B1D7BF48800058AB7 /* RequestTool */,
 			);
@@ -2879,6 +2883,15 @@
 				3F4620731D7BF63900058AB7 /* HandpicRequest.m */,
 			);
 			path = HandpicVCRequest;
+			sourceTree = "<group>";
+		};
+		3F49B7F41D7FB3C000D394D0 /* MeasureTool */ = {
+			isa = PBXGroup;
+			children = (
+				3F49B7F51D7FB3C700D394D0 /* Tools.h */,
+				3F49B7F61D7FB3C700D394D0 /* Tools.m */,
+			);
+			path = MeasureTool;
 			sourceTree = "<group>";
 		};
 		3F5D0E0B1D799CA800735890 = {
@@ -3576,6 +3589,7 @@
 				3F1059041D7EDD4E000DD913 /* LoginData.m in Sources */,
 				3F2A6ED41D7D5C6A00B69B99 /* NavigationCell.m in Sources */,
 				3F2A6ED01D7D5C6A00B69B99 /* HotspotCell.m in Sources */,
+				3F49B7F71D7FB3C700D394D0 /* Tools.m in Sources */,
 				3F4620551D7BEF2700058AB7 /* HandpickData.m in Sources */,
 				3F1059491D7F06DA000DD913 /* AttentionCell.m in Sources */,
 				3F10594F1D7F13D7000DD913 /* CircleModel.m in Sources */,

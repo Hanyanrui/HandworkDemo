@@ -19,6 +19,7 @@ static NSString * const reuseId = @"reuseIdentifier";
     [self createRefreshHeaderAndFoofer];
     [self registCell];
     self.tableView.backgroundColor=[UIColor lightGrayColor];
+    self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     
 }
 -(NSMutableArray*)dataArr
@@ -40,10 +41,8 @@ static NSString * const reuseId = @"reuseIdentifier";
     [self.dataArr removeAllObjects];
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-        NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:@"4j4mkevnbdiosio53jb7bculn5",@"PHPSESSID",@"YjoxOw%3D%3D",@"sgkv3_in_sys",@"aToxNzQwMDA2OTs%3D",@"sgkvs_uid",@"czoxOToic2drX21fMTQ3MzE0NDU3ODI1MyI7",@"sgkv3_uname", nil];
+        NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:@"4j4mkevnbdiosio53jb7bculn5",@"PHPSESSID",@"YjoxOw%3D%3D",@"sgkv3_in_sys",@"aToxNzQwMDA2OTs%3D",@"sgkvs_uid",@"czoxOToic2drX21fMTQ3MzE0NDU3ODI1MyI7",@"sgkv3_uname",@"czozNjoiNUFENzU5RDgtNzRCNS00RkNELUE5MkItRDQ1QUMxRTIzNDNDIjs%3D",@"sgkv_sgk_token", nil];
         [AttentionRequest getDataWithDic:dic withBlock:^(AttentionData *data) {
-            NSLog(@"%@",data.data);
             [weakSelf.dataArr addObjectsFromArray:data.data];
             [weakSelf.tableView.mj_header endRefreshing];
             [weakSelf.tableView reloadData];
@@ -78,10 +77,22 @@ static NSString * const reuseId = @"reuseIdentifier";
 }
 -(void)loadMoreData
 {
-
-
-
-
+    AttentionModel *model=[self.dataArr lastObject];
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:@"4j4mkevnbdiosio53jb7bculn5",@"PHPSESSID",@"YjoxOw%3D%3D",@"sgkv3_in_sys",@"aToxNzQwMDA2OTs%3D",@"sgkvs_uid",@"czoxOToic2drX21fMTQ3MzE0NDU3ODI1MyI7",@"sgkv3_uname",@"czozNjoiNUFENzU5RDgtNzRCNS00RkNELUE5MkItRDQ1QUMxRTIzNDNDIjs%3D",@"sgkv_sgk_token",model.pmid,@"id", nil];
+        [AttentionRequest getDataWithDic:dic withBlock:^(AttentionData *data) {
+            [weakSelf.dataArr addObjectsFromArray:data.data];
+            [weakSelf.tableView.mj_footer endRefreshing];
+            [weakSelf.tableView reloadData];
+        } withErrorBlock:^(NSError *error) {
+            [SVProgressHUD showErrorWithStatus:@"失败了,再来一次！"];
+            [weakSelf.tableView.mj_footer endRefreshing];
+        }];
+    });
+ 
+    
+    
 }
 
 
@@ -94,14 +105,31 @@ static NSString * const reuseId = @"reuseIdentifier";
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    AttentionModel *model=self.dataArr[indexPath.row];
+    
+    if ([model.type isEqualToString:@"follow"])
+    {
+        return kMainW/5+65;
+    }
+    else if ([model.type isEqualToString:@"course"])
+    {
+    
+        return kMainW*3/10+65;
+    
+    }
+    
+    
+    
+    
+    
+    
+    
     return kMainH/4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     AttentionCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseId forIndexPath:indexPath];
     cell.model=self.dataArr[indexPath.row];
-    
-    
     return cell;
 }
 

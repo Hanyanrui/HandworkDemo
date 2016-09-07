@@ -23,4 +23,5 @@
 @property(nonatomic,copy)NSString *pmid;
 @property(nonatomic,strong)NSArray *course;
 @property(nonatomic,strong)NSArray *follow;
+@property(nonatomic,strong)NSArray *circle;
 @end
