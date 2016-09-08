@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - DOPDropDownMenu (0.1.1)
   - MJRefresh (3.1.12)
   - SDAutoLayout (2.1.7)
   - SDCycleScrollView (1.65):
@@ -27,6 +28,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - DOPDropDownMenu
   - MJRefresh
   - SDAutoLayout
   - SDCycleScrollView
@@ -36,6 +38,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  DOPDropDownMenu: 92edceaee75cd8703d9891b4844d48c0d0a2ae54
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDAutoLayout: e9b36d04b8c0b504762a04d76fbbe5108944297a
   SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
@@ -44,6 +47,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YZDisplayViewController: 621f737a9aa3dfbc95a901e89e5e7c4b2ea6ef79
 
-PODFILE CHECKSUM: e6a415a8b839f13de7fbc056d916b7f693b4b9aa
+PODFILE CHECKSUM: bfceeefe26dd49c24c64e70dfb463b2c221f2a6f
 
 COCOAPODS: 1.0.1

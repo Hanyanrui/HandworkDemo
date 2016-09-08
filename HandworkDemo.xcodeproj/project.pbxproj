@@ -409,6 +409,8 @@
 		3F2A6ED51D7D5C6A00B69B99 /* NavigationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2A6ECD1D7D5C6A00B69B99 /* NavigationCell.xib */; };
 		3F2A6EDD1D7D5CD500B69B99 /* ExpertManCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A6EDB1D7D5CD500B69B99 /* ExpertManCell.m */; };
 		3F2A6EE11D7D5D1900B69B99 /* ExpertManViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A6EE01D7D5D1900B69B99 /* ExpertManViewController.m */; };
+		3F41F2DD1D81087D0058BDB1 /* DropDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F41F2DC1D81087D0058BDB1 /* DropDownView.m */; };
+		3F41F2E01D8112C20058BDB1 /* FatherImageTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F41F2DF1D8112C20058BDB1 /* FatherImageTextViewController.m */; };
 		3F4620521D7BEF0300058AB7 /* SlideModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4620511D7BEF0300058AB7 /* SlideModel.m */; };
 		3F4620551D7BEF2700058AB7 /* HandpickData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4620541D7BEF2700058AB7 /* HandpickData.m */; };
 		3F46205F1D7BF28D00058AB7 /* NavigationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F46205E1D7BF28D00058AB7 /* NavigationModel.m */; };
@@ -430,6 +432,11 @@
 		3F5D11951D79B7A000735890 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5D11941D79B7A000735890 /* ImageViewController.m */; };
 		3F5D11991D79C3C200735890 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5D11981D79C3C200735890 /* TabBarViewController.m */; };
 		3F5D11A91D79C6E500735890 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5D11A81D79C6E500735890 /* MineViewController.m */; };
+		3FC4B3AC1D801A57004D7B12 /* NavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC4B3AB1D801A57004D7B12 /* NavigationView.m */; };
+		3FC4B3B21D8058A0004D7B12 /* ImageTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC4B3B11D8058A0004D7B12 /* ImageTextViewController.m */; };
+		3FC4B3B51D8058B0004D7B12 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC4B3B41D8058B0004D7B12 /* VideoViewController.m */; };
+		3FC4B3B81D8058BF004D7B12 /* ZhuanTiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC4B3B71D8058BF004D7B12 /* ZhuanTiViewController.m */; };
+		3FC4B3BC1D805BAB004D7B12 /* CustomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC4B3BB1D805BAB004D7B12 /* CustomScrollView.m */; };
 		3FFF59621D7E513400A60174 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF59611D7E513400A60174 /* LoginViewController.m */; };
 		3FFF59641D7E55C800A60174 /* loginBackground@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FFF59631D7E55C800A60174 /* loginBackground@2x.jpg */; };
 		3FFF59671D7E6FD900A60174 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF59661D7E6FD900A60174 /* RegistViewController.m */; };
@@ -879,6 +886,10 @@
 		3F2A6EDB1D7D5CD500B69B99 /* ExpertManCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpertManCell.m; sourceTree = "<group>"; };
 		3F2A6EDF1D7D5D1900B69B99 /* ExpertManViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpertManViewController.h; sourceTree = "<group>"; };
 		3F2A6EE01D7D5D1900B69B99 /* ExpertManViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpertManViewController.m; sourceTree = "<group>"; };
+		3F41F2DB1D81087D0058BDB1 /* DropDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownView.h; sourceTree = "<group>"; };
+		3F41F2DC1D81087D0058BDB1 /* DropDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownView.m; sourceTree = "<group>"; };
+		3F41F2DE1D8112C20058BDB1 /* FatherImageTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FatherImageTextViewController.h; sourceTree = "<group>"; };
+		3F41F2DF1D8112C20058BDB1 /* FatherImageTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FatherImageTextViewController.m; sourceTree = "<group>"; };
 		3F4620501D7BEF0300058AB7 /* SlideModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideModel.h; sourceTree = "<group>"; };
 		3F4620511D7BEF0300058AB7 /* SlideModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideModel.m; sourceTree = "<group>"; };
 		3F4620531D7BEF2700058AB7 /* HandpickData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandpickData.h; sourceTree = "<group>"; };
@@ -921,6 +932,16 @@
 		3F5D11981D79C3C200735890 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		3F5D11A71D79C6E500735890 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		3F5D11A81D79C6E500735890 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		3FC4B3AA1D801A57004D7B12 /* NavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationView.h; sourceTree = "<group>"; };
+		3FC4B3AB1D801A57004D7B12 /* NavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationView.m; sourceTree = "<group>"; };
+		3FC4B3B01D8058A0004D7B12 /* ImageTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTextViewController.h; sourceTree = "<group>"; };
+		3FC4B3B11D8058A0004D7B12 /* ImageTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTextViewController.m; sourceTree = "<group>"; };
+		3FC4B3B31D8058B0004D7B12 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		3FC4B3B41D8058B0004D7B12 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
+		3FC4B3B61D8058BF004D7B12 /* ZhuanTiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZhuanTiViewController.h; sourceTree = "<group>"; };
+		3FC4B3B71D8058BF004D7B12 /* ZhuanTiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZhuanTiViewController.m; sourceTree = "<group>"; };
+		3FC4B3BA1D805BAB004D7B12 /* CustomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomScrollView.h; sourceTree = "<group>"; };
+		3FC4B3BB1D805BAB004D7B12 /* CustomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomScrollView.m; sourceTree = "<group>"; };
 		3FFF59601D7E513400A60174 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		3FFF59611D7E513400A60174 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		3FFF59631D7E55C800A60174 /* loginBackground@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "loginBackground@2x.jpg"; sourceTree = "<group>"; };
@@ -2510,6 +2531,7 @@
 		3F003DBF1D7AD61600E35471 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3FC4B3A81D801A1C004D7B12 /* TeachVCView */,
 				3F003DC01D7AD61600E35471 /* HomeVCView */,
 			);
 			path = View;
@@ -2765,6 +2787,16 @@
 				3F2A6EDB1D7D5CD500B69B99 /* ExpertManCell.m */,
 			);
 			path = ExpertManView;
+			sourceTree = "<group>";
+		};
+		3F41F2DA1D81087D0058BDB1 /* DropDownView */ = {
+			isa = PBXGroup;
+			children = (
+				3F41F2DB1D81087D0058BDB1 /* DropDownView.h */,
+				3F41F2DC1D81087D0058BDB1 /* DropDownView.m */,
+			);
+			name = DropDownView;
+			path = NavigationView/DropDownView;
 			sourceTree = "<group>";
 		};
 		3F46204E1D7BEF0300058AB7 /* HandpickModel */ = {
@@ -3058,8 +3090,68 @@
 			children = (
 				3F003A2B1D7A708200E35471 /* TeachViewController.h */,
 				3F003A2C1D7A708200E35471 /* TeachViewController.m */,
+				3FC4B3AD1D805885004D7B12 /* ImageTextVC */,
+				3FC4B3AE1D805885004D7B12 /* VideoVC */,
+				3FC4B3AF1D805885004D7B12 /* ZhuanTiVC */,
 			);
 			path = TeachVC;
+			sourceTree = "<group>";
+		};
+		3FC4B3A81D801A1C004D7B12 /* TeachVCView */ = {
+			isa = PBXGroup;
+			children = (
+				3F41F2DA1D81087D0058BDB1 /* DropDownView */,
+				3FC4B3B91D805B75004D7B12 /* CustomScrollView */,
+				3FC4B3A91D801A3E004D7B12 /* NavigationView */,
+			);
+			path = TeachVCView;
+			sourceTree = "<group>";
+		};
+		3FC4B3A91D801A3E004D7B12 /* NavigationView */ = {
+			isa = PBXGroup;
+			children = (
+				3FC4B3AA1D801A57004D7B12 /* NavigationView.h */,
+				3FC4B3AB1D801A57004D7B12 /* NavigationView.m */,
+			);
+			path = NavigationView;
+			sourceTree = "<group>";
+		};
+		3FC4B3AD1D805885004D7B12 /* ImageTextVC */ = {
+			isa = PBXGroup;
+			children = (
+				3F41F2DE1D8112C20058BDB1 /* FatherImageTextViewController.h */,
+				3F41F2DF1D8112C20058BDB1 /* FatherImageTextViewController.m */,
+				3FC4B3B01D8058A0004D7B12 /* ImageTextViewController.h */,
+				3FC4B3B11D8058A0004D7B12 /* ImageTextViewController.m */,
+			);
+			path = ImageTextVC;
+			sourceTree = "<group>";
+		};
+		3FC4B3AE1D805885004D7B12 /* VideoVC */ = {
+			isa = PBXGroup;
+			children = (
+				3FC4B3B31D8058B0004D7B12 /* VideoViewController.h */,
+				3FC4B3B41D8058B0004D7B12 /* VideoViewController.m */,
+			);
+			path = VideoVC;
+			sourceTree = "<group>";
+		};
+		3FC4B3AF1D805885004D7B12 /* ZhuanTiVC */ = {
+			isa = PBXGroup;
+			children = (
+				3FC4B3B61D8058BF004D7B12 /* ZhuanTiViewController.h */,
+				3FC4B3B71D8058BF004D7B12 /* ZhuanTiViewController.m */,
+			);
+			path = ZhuanTiVC;
+			sourceTree = "<group>";
+		};
+		3FC4B3B91D805B75004D7B12 /* CustomScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				3FC4B3BA1D805BAB004D7B12 /* CustomScrollView.h */,
+				3FC4B3BB1D805BAB004D7B12 /* CustomScrollView.m */,
+			);
+			path = CustomScrollView;
 			sourceTree = "<group>";
 		};
 		3FFF595F1D7E510000A60174 /* LoginVC */ = {
@@ -3586,7 +3678,9 @@
 				3F003A2D1D7A708200E35471 /* TeachViewController.m in Sources */,
 				3F10590A1D7EE0B8000DD913 /* unCircleModel.m in Sources */,
 				3F4620521D7BEF0300058AB7 /* SlideModel.m in Sources */,
+				3F41F2E01D8112C20058BDB1 /* FatherImageTextViewController.m in Sources */,
 				3F5D11A91D79C6E500735890 /* MineViewController.m in Sources */,
+				3FC4B3B51D8058B0004D7B12 /* VideoViewController.m in Sources */,
 				3FFF59671D7E6FD900A60174 /* RegistViewController.m in Sources */,
 				3F5D0E1C1D799CA800735890 /* AppDelegate.m in Sources */,
 				3F2A6EBA1D7D4D7500B69B99 /* DataModel.m in Sources */,
@@ -3599,6 +3693,8 @@
 				3F003DCA1D7ADB7400E35471 /* MemersOpenReusableView.m in Sources */,
 				3F4620621D7BF2FF00058AB7 /* AdvanceModel.m in Sources */,
 				3F1918D91D7C4BD7009A9F46 /* SectionOneHeadView.m in Sources */,
+				3F41F2DD1D81087D0058BDB1 /* DropDownView.m in Sources */,
+				3FC4B3B21D8058A0004D7B12 /* ImageTextViewController.m in Sources */,
 				3F003A261D7A527B00E35471 /* NavViewController.m in Sources */,
 				3FFF59621D7E513400A60174 /* LoginViewController.m in Sources */,
 				3F2A6ED21D7D5C6A00B69B99 /* MembersOpenedCell.m in Sources */,
@@ -3614,6 +3710,7 @@
 				3F10594F1D7F13D7000DD913 /* CircleModel.m in Sources */,
 				3F1059381D7EFA2B000DD913 /* AttentionModel.m in Sources */,
 				3F46205F1D7BF28D00058AB7 /* NavigationModel.m in Sources */,
+				3FC4B3AC1D801A57004D7B12 /* NavigationView.m in Sources */,
 				3F4620741D7BF63900058AB7 /* HandpicRequest.m in Sources */,
 				3F4620711D7BF5E900058AB7 /* GuideTool.m in Sources */,
 				3F1058F11D7EBD9B000DD913 /* VerifyData.m in Sources */,
@@ -3625,6 +3722,7 @@
 				3F003A331D7A71A700E35471 /* HandGroupViewController.m in Sources */,
 				3F1059111D7EE1E4000DD913 /* LoginRequest.m in Sources */,
 				3F1058ED1D7EBD27000DD913 /* VerifyRequest.m in Sources */,
+				3FC4B3B81D8058BF004D7B12 /* ZhuanTiViewController.m in Sources */,
 				3F003A391D7A7E9700E35471 /* FatherViewController.m in Sources */,
 				3F003A431D7A81D000E35471 /* HomeViewController.m in Sources */,
 				3F12F5361D7DB0E900FEE8E7 /* ActionViewController.m in Sources */,
@@ -3634,6 +3732,7 @@
 				3F4620771D7BF6D100058AB7 /* RequestDataTool.m in Sources */,
 				3F49B8081D7FFAF700D394D0 /* AddGuanZhuData.m in Sources */,
 				3F12F5501D7DB76A00FEE8E7 /* ActionData.m in Sources */,
+				3FC4B3BC1D805BAB004D7B12 /* CustomScrollView.m in Sources */,
 				3F1059071D7EDE24000DD913 /* LoginDataModel.m in Sources */,
 				3F1059451D7F001F000DD913 /* AttentionViewController.m in Sources */,
 			);

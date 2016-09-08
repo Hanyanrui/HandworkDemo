@@ -6,8 +6,8 @@
 //  Copyright © 2016年 HYR. All rights reserved.
 //
 
-#import "FatherViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface TeachViewController : FatherViewController
+@interface TeachViewController : UIViewController
 
 @end
