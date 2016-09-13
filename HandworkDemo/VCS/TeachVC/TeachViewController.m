@@ -23,6 +23,7 @@
     self.title=nil;
     [self createNavigationTitleView];
     [self addChildViewControllers];
+    self.navigationController.navigationBar.translucent=NO;
 }
 -(void)createNavigationTitleView
 {

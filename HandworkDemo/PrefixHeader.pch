@@ -80,7 +80,11 @@
 #import "ZhuanTiViewController.h"
 #import "CustomScrollView.h"
 #import "DOPDropDownMenu.h"
-#import "DropDownView.h"
+#import "ImageTextData.h"
+#import "ImageTextModel.h"
+#import "ImageTextRequest.h"
+#import "ImageTextCell.h"
+#import "UIColor+Exten.h"
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
@@ -117,4 +121,4 @@ indicator.activityIndicatorViewStyle=UIActivityIndicatorViewStyleWhiteLarge;\
 #define GuanzhuUrl @"http://d.shougongke.com/index.php?c=Mobnotice&a=friends&vid=20"
 #define AddGuanzhuUrl @"http://m.shougongke.com/index.php?c=User&a=addGuan"
 #define CancelGuanZhuUrl @"http://m.shougongke.com/index.php?c=User&a=addGuan"
-
+#define ImageTextUrl @"http://m.shougongke.com/index.php?&c=Course&a=newCourseList&cate_id=2&gcate=cate&order=new&pub_time=month&vid=20"

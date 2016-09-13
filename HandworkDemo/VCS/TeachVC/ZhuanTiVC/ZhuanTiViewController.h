@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZhuanTiViewController : UICollectionViewController
+@interface ZhuanTiViewController : UIViewController
 
 @end

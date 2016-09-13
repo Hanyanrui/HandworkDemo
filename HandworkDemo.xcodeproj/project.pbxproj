@@ -409,8 +409,6 @@
 		3F2A6ED51D7D5C6A00B69B99 /* NavigationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2A6ECD1D7D5C6A00B69B99 /* NavigationCell.xib */; };
 		3F2A6EDD1D7D5CD500B69B99 /* ExpertManCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A6EDB1D7D5CD500B69B99 /* ExpertManCell.m */; };
 		3F2A6EE11D7D5D1900B69B99 /* ExpertManViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A6EE01D7D5D1900B69B99 /* ExpertManViewController.m */; };
-		3F41F2DD1D81087D0058BDB1 /* DropDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F41F2DC1D81087D0058BDB1 /* DropDownView.m */; };
-		3F41F2E01D8112C20058BDB1 /* FatherImageTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F41F2DF1D8112C20058BDB1 /* FatherImageTextViewController.m */; };
 		3F4620521D7BEF0300058AB7 /* SlideModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4620511D7BEF0300058AB7 /* SlideModel.m */; };
 		3F4620551D7BEF2700058AB7 /* HandpickData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4620541D7BEF2700058AB7 /* HandpickData.m */; };
 		3F46205F1D7BF28D00058AB7 /* NavigationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F46205E1D7BF28D00058AB7 /* NavigationModel.m */; };
@@ -437,6 +435,12 @@
 		3FC4B3B51D8058B0004D7B12 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC4B3B41D8058B0004D7B12 /* VideoViewController.m */; };
 		3FC4B3B81D8058BF004D7B12 /* ZhuanTiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC4B3B71D8058BF004D7B12 /* ZhuanTiViewController.m */; };
 		3FC4B3BC1D805BAB004D7B12 /* CustomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC4B3BB1D805BAB004D7B12 /* CustomScrollView.m */; };
+		3FFB1C641D86D35B00ABEC7F /* ImageTextData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB1C631D86D35B00ABEC7F /* ImageTextData.m */; };
+		3FFB1C671D86D3F800ABEC7F /* ImageTextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB1C661D86D3F800ABEC7F /* ImageTextModel.m */; };
+		3FFB1C6C1D86D54000ABEC7F /* ImageTextRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB1C6B1D86D54000ABEC7F /* ImageTextRequest.m */; };
+		3FFB1C741D86EB4900ABEC7F /* ImageTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB1C721D86EB4900ABEC7F /* ImageTextCell.m */; };
+		3FFB1C751D86EB4900ABEC7F /* ImageTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FFB1C731D86EB4900ABEC7F /* ImageTextCell.xib */; };
+		3FFB1C811D86FEA400ABEC7F /* UIColor+Exten.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB1C801D86FEA400ABEC7F /* UIColor+Exten.m */; };
 		3FFF59621D7E513400A60174 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF59611D7E513400A60174 /* LoginViewController.m */; };
 		3FFF59641D7E55C800A60174 /* loginBackground@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FFF59631D7E55C800A60174 /* loginBackground@2x.jpg */; };
 		3FFF59671D7E6FD900A60174 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF59661D7E6FD900A60174 /* RegistViewController.m */; };
@@ -886,10 +890,6 @@
 		3F2A6EDB1D7D5CD500B69B99 /* ExpertManCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpertManCell.m; sourceTree = "<group>"; };
 		3F2A6EDF1D7D5D1900B69B99 /* ExpertManViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpertManViewController.h; sourceTree = "<group>"; };
 		3F2A6EE01D7D5D1900B69B99 /* ExpertManViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpertManViewController.m; sourceTree = "<group>"; };
-		3F41F2DB1D81087D0058BDB1 /* DropDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownView.h; sourceTree = "<group>"; };
-		3F41F2DC1D81087D0058BDB1 /* DropDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownView.m; sourceTree = "<group>"; };
-		3F41F2DE1D8112C20058BDB1 /* FatherImageTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FatherImageTextViewController.h; sourceTree = "<group>"; };
-		3F41F2DF1D8112C20058BDB1 /* FatherImageTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FatherImageTextViewController.m; sourceTree = "<group>"; };
 		3F4620501D7BEF0300058AB7 /* SlideModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideModel.h; sourceTree = "<group>"; };
 		3F4620511D7BEF0300058AB7 /* SlideModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideModel.m; sourceTree = "<group>"; };
 		3F4620531D7BEF2700058AB7 /* HandpickData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandpickData.h; sourceTree = "<group>"; };
@@ -942,6 +942,17 @@
 		3FC4B3B71D8058BF004D7B12 /* ZhuanTiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZhuanTiViewController.m; sourceTree = "<group>"; };
 		3FC4B3BA1D805BAB004D7B12 /* CustomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomScrollView.h; sourceTree = "<group>"; };
 		3FC4B3BB1D805BAB004D7B12 /* CustomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomScrollView.m; sourceTree = "<group>"; };
+		3FFB1C621D86D35B00ABEC7F /* ImageTextData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTextData.h; sourceTree = "<group>"; };
+		3FFB1C631D86D35B00ABEC7F /* ImageTextData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTextData.m; sourceTree = "<group>"; };
+		3FFB1C651D86D3F800ABEC7F /* ImageTextModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTextModel.h; sourceTree = "<group>"; };
+		3FFB1C661D86D3F800ABEC7F /* ImageTextModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTextModel.m; sourceTree = "<group>"; };
+		3FFB1C6A1D86D54000ABEC7F /* ImageTextRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTextRequest.h; sourceTree = "<group>"; };
+		3FFB1C6B1D86D54000ABEC7F /* ImageTextRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTextRequest.m; sourceTree = "<group>"; };
+		3FFB1C711D86EB4900ABEC7F /* ImageTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTextCell.h; sourceTree = "<group>"; };
+		3FFB1C721D86EB4900ABEC7F /* ImageTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTextCell.m; sourceTree = "<group>"; };
+		3FFB1C731D86EB4900ABEC7F /* ImageTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageTextCell.xib; sourceTree = "<group>"; };
+		3FFB1C7F1D86FEA400ABEC7F /* UIColor+Exten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Exten.h"; path = "HandworkDemo/View/TeachVCView/ImageTextCell/UIColor+Exten.h"; sourceTree = SOURCE_ROOT; };
+		3FFB1C801D86FEA400ABEC7F /* UIColor+Exten.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Exten.m"; path = "HandworkDemo/View/TeachVCView/ImageTextCell/UIColor+Exten.m"; sourceTree = SOURCE_ROOT; };
 		3FFF59601D7E513400A60174 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		3FFF59611D7E513400A60174 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		3FFF59631D7E55C800A60174 /* loginBackground@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "loginBackground@2x.jpg"; sourceTree = "<group>"; };
@@ -2531,8 +2542,8 @@
 		3F003DBF1D7AD61600E35471 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3FC4B3A81D801A1C004D7B12 /* TeachVCView */,
 				3F003DC01D7AD61600E35471 /* HomeVCView */,
+				3FC4B3A81D801A1C004D7B12 /* TeachVCView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2590,6 +2601,7 @@
 				3F1059011D7EDD3C000DD913 /* LoginModel */,
 				3F1058EE1D7EBD9B000DD913 /* RegistModel */,
 				3F003DCF1D7ADFAE00E35471 /* HomeVCModel */,
+				3FFB1C611D86D32500ABEC7F /* TeachVCModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2789,16 +2801,6 @@
 			path = ExpertManView;
 			sourceTree = "<group>";
 		};
-		3F41F2DA1D81087D0058BDB1 /* DropDownView */ = {
-			isa = PBXGroup;
-			children = (
-				3F41F2DB1D81087D0058BDB1 /* DropDownView.h */,
-				3F41F2DC1D81087D0058BDB1 /* DropDownView.m */,
-			);
-			name = DropDownView;
-			path = NavigationView/DropDownView;
-			sourceTree = "<group>";
-		};
 		3F46204E1D7BEF0300058AB7 /* HandpickModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -2885,6 +2887,7 @@
 				3F10590E1D7EE1D0000DD913 /* LoginVCRequest */,
 				3F1058EA1D7EBD27000DD913 /* RegisetVCRequest */,
 				3F46206C1D7BF48800058AB7 /* HomeVCRequest */,
+				3FFB1C681D86D4FC00ABEC7F /* TeachVCRequest */,
 			);
 			path = RequestTool;
 			sourceTree = "<group>";
@@ -2970,7 +2973,6 @@
 				3F003DBF1D7AD61600E35471 /* View */,
 				3F003DCE1D7ADFAE00E35471 /* Model */,
 				3F4620691D7BF48800058AB7 /* Tools */,
-				3F5D0E301D799FF800735890 /* Request */,
 				3F5D0E311D799FF800735890 /* Resource */,
 				3F5D0E1A1D799CA800735890 /* AppDelegate.h */,
 				3F5D0E1B1D799CA800735890 /* AppDelegate.m */,
@@ -2994,15 +2996,10 @@
 		3F5D0E2E1D799FF800735890 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				3FFB1C7F1D86FEA400ABEC7F /* UIColor+Exten.h */,
+				3FFB1C801D86FEA400ABEC7F /* UIColor+Exten.m */,
 			);
 			path = Category;
-			sourceTree = "<group>";
-		};
-		3F5D0E301D799FF800735890 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Request;
 			sourceTree = "<group>";
 		};
 		3F5D0E311D799FF800735890 /* Resource */ = {
@@ -3100,7 +3097,7 @@
 		3FC4B3A81D801A1C004D7B12 /* TeachVCView */ = {
 			isa = PBXGroup;
 			children = (
-				3F41F2DA1D81087D0058BDB1 /* DropDownView */,
+				3FFB1C6D1D86EAAA00ABEC7F /* ImageTextCell */,
 				3FC4B3B91D805B75004D7B12 /* CustomScrollView */,
 				3FC4B3A91D801A3E004D7B12 /* NavigationView */,
 			);
@@ -3119,8 +3116,6 @@
 		3FC4B3AD1D805885004D7B12 /* ImageTextVC */ = {
 			isa = PBXGroup;
 			children = (
-				3F41F2DE1D8112C20058BDB1 /* FatherImageTextViewController.h */,
-				3F41F2DF1D8112C20058BDB1 /* FatherImageTextViewController.m */,
 				3FC4B3B01D8058A0004D7B12 /* ImageTextViewController.h */,
 				3FC4B3B11D8058A0004D7B12 /* ImageTextViewController.m */,
 			);
@@ -3152,6 +3147,44 @@
 				3FC4B3BB1D805BAB004D7B12 /* CustomScrollView.m */,
 			);
 			path = CustomScrollView;
+			sourceTree = "<group>";
+		};
+		3FFB1C611D86D32500ABEC7F /* TeachVCModel */ = {
+			isa = PBXGroup;
+			children = (
+				3FFB1C621D86D35B00ABEC7F /* ImageTextData.h */,
+				3FFB1C631D86D35B00ABEC7F /* ImageTextData.m */,
+				3FFB1C651D86D3F800ABEC7F /* ImageTextModel.h */,
+				3FFB1C661D86D3F800ABEC7F /* ImageTextModel.m */,
+			);
+			path = TeachVCModel;
+			sourceTree = "<group>";
+		};
+		3FFB1C681D86D4FC00ABEC7F /* TeachVCRequest */ = {
+			isa = PBXGroup;
+			children = (
+				3FFB1C691D86D51B00ABEC7F /* ImageTextVCRequest */,
+			);
+			path = TeachVCRequest;
+			sourceTree = "<group>";
+		};
+		3FFB1C691D86D51B00ABEC7F /* ImageTextVCRequest */ = {
+			isa = PBXGroup;
+			children = (
+				3FFB1C6A1D86D54000ABEC7F /* ImageTextRequest.h */,
+				3FFB1C6B1D86D54000ABEC7F /* ImageTextRequest.m */,
+			);
+			path = ImageTextVCRequest;
+			sourceTree = "<group>";
+		};
+		3FFB1C6D1D86EAAA00ABEC7F /* ImageTextCell */ = {
+			isa = PBXGroup;
+			children = (
+				3FFB1C711D86EB4900ABEC7F /* ImageTextCell.h */,
+				3FFB1C721D86EB4900ABEC7F /* ImageTextCell.m */,
+				3FFB1C731D86EB4900ABEC7F /* ImageTextCell.xib */,
+			);
+			path = ImageTextCell;
 			sourceTree = "<group>";
 		};
 		3FFF595F1D7E510000A60174 /* LoginVC */ = {
@@ -3589,6 +3622,7 @@
 				3F003DA11D7AAD1600E35471 /* owl-login-arm-left@2x.png in Resources */,
 				3F003C911D7AAD1600E35471 /* Contents.json in Resources */,
 				3F003D5B1D7AAD1600E35471 /* sgk_course_sort_new.png in Resources */,
+				3FFB1C751D86EB4900ABEC7F /* ImageTextCell.xib in Resources */,
 				3F003D191D7AAD1600E35471 /* sgk_course_cate_chuangyishougong_selected.png in Resources */,
 				3F003C7C1D7AAD1600E35471 /* Bubble5.png in Resources */,
 				3F003D481D7AAD1600E35471 /* Contents.json in Resources */,
@@ -3678,11 +3712,11 @@
 				3F003A2D1D7A708200E35471 /* TeachViewController.m in Sources */,
 				3F10590A1D7EE0B8000DD913 /* unCircleModel.m in Sources */,
 				3F4620521D7BEF0300058AB7 /* SlideModel.m in Sources */,
-				3F41F2E01D8112C20058BDB1 /* FatherImageTextViewController.m in Sources */,
 				3F5D11A91D79C6E500735890 /* MineViewController.m in Sources */,
 				3FC4B3B51D8058B0004D7B12 /* VideoViewController.m in Sources */,
 				3FFF59671D7E6FD900A60174 /* RegistViewController.m in Sources */,
 				3F5D0E1C1D799CA800735890 /* AppDelegate.m in Sources */,
+				3FFB1C741D86EB4900ABEC7F /* ImageTextCell.m in Sources */,
 				3F2A6EBA1D7D4D7500B69B99 /* DataModel.m in Sources */,
 				3F2A6EAE1D7D478200B69B99 /* ExpertManRequest.m in Sources */,
 				3F49B7FD1D7FF37000D394D0 /* AddGuanZhuRequest.m in Sources */,
@@ -3693,7 +3727,6 @@
 				3F003DCA1D7ADB7400E35471 /* MemersOpenReusableView.m in Sources */,
 				3F4620621D7BF2FF00058AB7 /* AdvanceModel.m in Sources */,
 				3F1918D91D7C4BD7009A9F46 /* SectionOneHeadView.m in Sources */,
-				3F41F2DD1D81087D0058BDB1 /* DropDownView.m in Sources */,
 				3FC4B3B21D8058A0004D7B12 /* ImageTextViewController.m in Sources */,
 				3F003A261D7A527B00E35471 /* NavViewController.m in Sources */,
 				3FFF59621D7E513400A60174 /* LoginViewController.m in Sources */,
@@ -3701,6 +3734,7 @@
 				3F003A361D7A71CF00E35471 /* FairViewController.m in Sources */,
 				3F10593F1D7EFCFA000DD913 /* AttentionRequest.m in Sources */,
 				3F4620681D7BF3C400058AB7 /* MembersOpendModel.m in Sources */,
+				3FFB1C671D86D3F800ABEC7F /* ImageTextModel.m in Sources */,
 				3F1059041D7EDD4E000DD913 /* LoginData.m in Sources */,
 				3F2A6ED41D7D5C6A00B69B99 /* NavigationCell.m in Sources */,
 				3F2A6ED01D7D5C6A00B69B99 /* HotspotCell.m in Sources */,
@@ -3711,15 +3745,18 @@
 				3F1059381D7EFA2B000DD913 /* AttentionModel.m in Sources */,
 				3F46205F1D7BF28D00058AB7 /* NavigationModel.m in Sources */,
 				3FC4B3AC1D801A57004D7B12 /* NavigationView.m in Sources */,
+				3FFB1C6C1D86D54000ABEC7F /* ImageTextRequest.m in Sources */,
 				3F4620741D7BF63900058AB7 /* HandpicRequest.m in Sources */,
 				3F4620711D7BF5E900058AB7 /* GuideTool.m in Sources */,
 				3F1058F11D7EBD9B000DD913 /* VerifyData.m in Sources */,
+				3FFB1C641D86D35B00ABEC7F /* ImageTextData.m in Sources */,
 				3F2A6EE11D7D5D1900B69B99 /* ExpertManViewController.m in Sources */,
 				3F5D0E191D799CA800735890 /* main.m in Sources */,
 				3F2A6ECE1D7D5C6A00B69B99 /* AdvanceCell.m in Sources */,
 				3F2A6EDD1D7D5CD500B69B99 /* ExpertManCell.m in Sources */,
 				3F4620651D7BF34900058AB7 /* HotTopicModel.m in Sources */,
 				3F003A331D7A71A700E35471 /* HandGroupViewController.m in Sources */,
+				3FFB1C811D86FEA400ABEC7F /* UIColor+Exten.m in Sources */,
 				3F1059111D7EE1E4000DD913 /* LoginRequest.m in Sources */,
 				3F1058ED1D7EBD27000DD913 /* VerifyRequest.m in Sources */,
 				3FC4B3B81D8058BF004D7B12 /* ZhuanTiViewController.m in Sources */,

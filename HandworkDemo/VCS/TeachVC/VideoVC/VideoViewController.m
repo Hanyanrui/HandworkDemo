@@ -16,13 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.collectionView.backgroundColor=[UIColor grayColor];
+    self.view.backgroundColor=[UIColor grayColor];
 }
-- (instancetype)init
-{
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    return [self initWithCollectionViewLayout:layout];
-}
+//- (instancetype)init
+//{
+//    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+//    return [self initWithCollectionViewLayout:layout];
+//}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

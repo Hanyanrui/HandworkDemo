@@ -55,13 +55,13 @@
     {
         _model=model;
     }
-    CGFloat height=kMainW/[model.width floatValue]*[model.height floatValue];
-    _logoImageView.frame=CGRectMake(0, 0, kMainW, height);
+    
+    _logoImageView.frame=CGRectMake(0, 0, kMainW, kMainW/3);
     [_logoImageView sd_setImageWithURL:[NSURL URLWithString:model.m_logo]];
     
-    _sujectLB.frame=CGRectMake(10, height, kMainW*4/5, kMainW/8);
+    _sujectLB.frame=CGRectMake(10, kMainW/3, kMainW*4/5, kMainW/8);
     _sujectLB.text=[NSString stringWithFormat:@"%@\n征集作品时间:%@",model.c_name,model.c_time];
-    _stausLB.frame=CGRectMake(kMainW*4/5, height+kMainW/32, kMainW/5, kMainW/16);
+    _stausLB.frame=CGRectMake(kMainW*4/5, kMainW/3+kMainW/32, kMainW/5, kMainW/16);
     if ([model.c_status isEqualToString:@"1"])
     {
         _stausLB.text=@"进行中";

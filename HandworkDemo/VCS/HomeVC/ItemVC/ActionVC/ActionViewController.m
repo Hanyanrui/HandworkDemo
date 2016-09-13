@@ -107,9 +107,8 @@ static NSString * const reuseId = @"reuseIdentifier";
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ActionModel *model=self.dataArr[indexPath.row];
-   CGFloat height=kMainW/[model.width floatValue]*[model.height floatValue];
-    return height+kMainW/8;
+   
+    return kMainW/3+kMainW/8;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

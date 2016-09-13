@@ -6,8 +6,8 @@
 //  Copyright © 2016年 HYR. All rights reserved.
 //
 
-#import "FatherImageTextViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface ImageTextViewController : FatherImageTextViewController
+@interface ImageTextViewController : UIViewController
 
 @end

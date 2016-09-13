@@ -45,9 +45,9 @@
     self.delegate=self;
     for (int i=0; i<_vcArr.count; i++)
     {
-        UICollectionViewController *vc=_vcArr[i];
-        vc.collectionView.frame=CGRectMake(kMainW*i, 0, kMainW, kMainH);
-        [self addSubview:vc.collectionView];
+        UIViewController *vc=_vcArr[i];
+        vc.view.frame=CGRectMake(kMainW*i, 0, kMainW, kMainH);
+        [self addSubview:vc.view];
     }
 }
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
