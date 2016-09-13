@@ -368,6 +368,7 @@
 		3F003DA41D7AAD1600E35471 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F003C411D7AAD1600E35471 /* Contents.json */; };
 		3F003DA51D7AAD1600E35471 /* owl-login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F003C421D7AAD1600E35471 /* owl-login@2x.png */; };
 		3F003DCA1D7ADB7400E35471 /* MemersOpenReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F003DC91D7ADB7400E35471 /* MemersOpenReusableView.m */; };
+		3F021DED1D8824820090CC55 /* ShoopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F021DEC1D8824820090CC55 /* ShoopModel.m */; };
 		3F1058ED1D7EBD27000DD913 /* VerifyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1058EC1D7EBD27000DD913 /* VerifyRequest.m */; };
 		3F1058F11D7EBD9B000DD913 /* VerifyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1058F01D7EBD9B000DD913 /* VerifyData.m */; };
 		3F1058F41D7EBE19000DD913 /* RegistData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1058F31D7EBE19000DD913 /* RegistData.m */; };
@@ -817,6 +818,8 @@
 		3F003C421D7AAD1600E35471 /* owl-login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "owl-login@2x.png"; sourceTree = "<group>"; };
 		3F003DC81D7ADB7400E35471 /* MemersOpenReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemersOpenReusableView.h; sourceTree = "<group>"; };
 		3F003DC91D7ADB7400E35471 /* MemersOpenReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemersOpenReusableView.m; sourceTree = "<group>"; };
+		3F021DEB1D8824820090CC55 /* ShoopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoopModel.h; sourceTree = "<group>"; };
+		3F021DEC1D8824820090CC55 /* ShoopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoopModel.m; sourceTree = "<group>"; };
 		3F1058EB1D7EBD27000DD913 /* VerifyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyRequest.h; sourceTree = "<group>"; };
 		3F1058EC1D7EBD27000DD913 /* VerifyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyRequest.m; sourceTree = "<group>"; };
 		3F1058EF1D7EBD9B000DD913 /* VerifyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyData.h; sourceTree = "<group>"; };
@@ -3156,6 +3159,8 @@
 				3FFB1C631D86D35B00ABEC7F /* ImageTextData.m */,
 				3FFB1C651D86D3F800ABEC7F /* ImageTextModel.h */,
 				3FFB1C661D86D3F800ABEC7F /* ImageTextModel.m */,
+				3F021DEB1D8824820090CC55 /* ShoopModel.h */,
+				3F021DEC1D8824820090CC55 /* ShoopModel.m */,
 			);
 			path = TeachVCModel;
 			sourceTree = "<group>";
@@ -3738,6 +3743,7 @@
 				3F1059041D7EDD4E000DD913 /* LoginData.m in Sources */,
 				3F2A6ED41D7D5C6A00B69B99 /* NavigationCell.m in Sources */,
 				3F2A6ED01D7D5C6A00B69B99 /* HotspotCell.m in Sources */,
+				3F021DED1D8824820090CC55 /* ShoopModel.m in Sources */,
 				3F49B7F71D7FB3C700D394D0 /* Tools.m in Sources */,
 				3F4620551D7BEF2700058AB7 /* HandpickData.m in Sources */,
 				3F1059491D7F06DA000DD913 /* AttentionCell.m in Sources */,

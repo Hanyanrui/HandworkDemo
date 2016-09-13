@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "ShoopModel.h"
 @interface ImageTextModel : NSObject
 @property(nonatomic,copy)NSString *subject;
 @property(nonatomic,copy)NSString *hand_id;
@@ -19,4 +19,5 @@
 @property(nonatomic,copy)NSString *user_name;
 @property(nonatomic,copy)NSString *bg_color;
 @property(nonatomic,copy)NSString *last_id;
+@property(nonatomic,strong)ShoopModel *shopping;
 @end

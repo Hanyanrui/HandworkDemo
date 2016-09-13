@@ -16,6 +16,7 @@
     UILabel *_user_nameLB;
     UILabel *_buttomLB;
     
+    
 
 }
 @end
@@ -35,37 +36,58 @@
 }
 -(void)createSubViews
 {
-    UIImageView *imageView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, (kMainW-30)/2, kMainH*2/4 *3/5)];
-    imageView.backgroundColor=[UIColor grayColor];
-    [self addSubview:imageView];
+    self.contentView.layer.cornerRadius=5;
+    self.contentView.layer.masksToBounds=YES;
+    
+    CGFloat width =(kMainW-30)/2;
+
+    
+    UIImageView *imageView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, width,width)];;
+    [self.contentView addSubview:imageView];
     _imageView=imageView;
-    CGFloat height=kMainH*2/4 *2/5;
-    UIView *bgView=[[UIView alloc]initWithFrame:CGRectMake(0, kMainH*2/4 *3/5, (kMainW-30)/2, height)];
-    [self addSubview:bgView];
+    
+   
+    UILabel *priceLB=[[UILabel alloc]init];
+    priceLB.backgroundColor=RedColor;
+    priceLB.textColor=[UIColor whiteColor];
+    priceLB.layer.cornerRadius=15;
+    priceLB.layer.masksToBounds=YES;
+    [self.contentView addSubview:priceLB];
+    _priceLB=priceLB;
+    
+    
+    UIView *bgView=[[UIView alloc]initWithFrame:CGRectMake(0, width,width, width/2)];
+    [self.contentView addSubview:bgView];
     _bgView=bgView;
     
     
-    UILabel *subjectLB=[[UILabel alloc]initWithFrame:CGRectMake(10, 0, (kMainW-30)/2-10,  height/3)];
+    UILabel *subjectLB=[[UILabel alloc]initWithFrame:CGRectMake(10, 0, width,  width/6)];
     subjectLB.numberOfLines=0;
     subjectLB.adjustsFontSizeToFitWidth=YES;
     subjectLB.textColor=[UIColor whiteColor];
     [bgView addSubview:subjectLB];
     _subjectLB=subjectLB;
     
-    UILabel *userLB=[[UILabel alloc]initWithFrame:CGRectMake(10, height/3, (kMainW-30)/2-10, height/3)];
+
+    UILabel *userLB=[[UILabel alloc]initWithFrame:CGRectMake(10, width/6, width, width/6)];
     [bgView addSubview:userLB];
     userLB.textColor=[UIColor grayColor];
     _user_nameLB=userLB;
   
+    UIView *lineView=[[UIView alloc]initWithFrame:CGRectMake(10, width/3, width-20, 1)];
+    lineView.backgroundColor=[UIColor grayColor];
+    [bgView addSubview:lineView];
     
     
-    UILabel *bottomLB=[[UILabel alloc]initWithFrame:CGRectMake(10,height/3*2, (kMainW-30)/2-10, height/3)];
-    [bgView addSubview:bottomLB];
+    UILabel *bottomLB=[[UILabel alloc]initWithFrame:CGRectMake(10,width/3, width, width/6)];
     bottomLB.textColor=[UIColor grayColor];
-   _buttomLB=userLB;
+    [bgView addSubview:bottomLB];
+    _buttomLB=bottomLB;
     
+   
 
 }
+
 -(void)setModel:(ImageTextModel *)model
 {
     if (_model!=model) {
@@ -76,5 +98,7 @@
     _subjectLB.text=model.subject;
     _user_nameLB.text=[NSString stringWithFormat:@"by %@",model.user_name];
     _buttomLB.text=[NSString stringWithFormat:@"%@人气/%@收藏",model.view,model.collect];
+    _priceLB.text=[NSString stringWithFormat:@"  ¥%@",model.shopping.price_pro];
+
 }
 @end

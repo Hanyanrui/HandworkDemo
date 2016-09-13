@@ -8,8 +8,14 @@
 
 #import "ImageTextViewController.h"
 static NSString *const Cell=@"cell";
-@interface ImageTextViewController ()<DOPDropDownMenuDelegate,DOPDropDownMenuDataSource,UICollectionViewDelegate,UICollectionViewDataSource>
 
+@interface ImageTextViewController ()<DOPDropDownMenuDelegate,DOPDropDownMenuDataSource,UICollectionViewDelegate,UICollectionViewDataSource>
+{
+    NSInteger Sort ;
+    NSInteger Time ;
+    NSInteger Order;
+
+}
 @property(nonatomic,strong)NSMutableArray *menuDataArr;
 @property(nonatomic,strong)NSMutableArray *allSortTitleArr;
 @property(nonatomic,strong)NSMutableArray *allSortImageArr;
@@ -25,12 +31,14 @@ static NSString *const Cell=@"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor redColor];
-    self.view.backgroundColor=[UIColor redColor];
-     [self creatDownMenuView];
-    [self creatCollectionView];
-   
 
+     [self creatDownMenuView];
+     [self creatCollectionView];
+     [self createRefreshHeaderAndFoofer];
+    Sort=0;
+    Time=0;
+    Order=0;
+    
     
 }
 
@@ -84,7 +92,6 @@ static NSString *const Cell=@"cell";
 -(void)creatDownMenuView
 {
     DOPDropDownMenu *menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 0) andHeight:40];
-    menu.backgroundColor=[UIColor blackColor];
     menu.delegate = self;
     menu.dataSource = self;
     [self.view addSubview:menu];
@@ -97,14 +104,68 @@ static NSString *const Cell=@"cell";
     UICollectionViewFlowLayout *layOut=[[UICollectionViewFlowLayout alloc]init];
     [layOut setScrollDirection:UICollectionViewScrollDirectionVertical];
     self.collectionView=[[UICollectionView alloc]initWithFrame:CGRectMake(0, 40, kMainW, kMainH-40) collectionViewLayout:layOut];
-   self.collectionView.backgroundColor=[UIColor lightGrayColor];
-   self.collectionView.delegate=self;
-   self.collectionView.dataSource=self;
+    self.collectionView.backgroundColor=[UIColor whiteColor];
+    self.collectionView.delegate=self;
+    self.collectionView.dataSource=self;
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([ImageTextCell class]) bundle:nil] forCellWithReuseIdentifier:Cell];
     [self.view addSubview:self.collectionView];
 
 
 }
+
+-(void)createRefreshHeaderAndFoofer
+{
+    MJRefreshGifHeader *header=[MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
+    [header setImages:RefreshImages forState:(MJRefreshStateRefreshing)];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
+    [header setTitle:@"松开刷新" forState:MJRefreshStatePulling];
+    [header setTitle:@"小客正在刷新" forState:MJRefreshStateRefreshing];
+    self.collectionView.mj_header=header;
+    [header beginRefreshing];
+    
+    MJRefreshAutoGifFooter *footer=[MJRefreshAutoGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    [footer setImages:RefreshImages forState:(MJRefreshStateRefreshing)];
+    [footer setTitle:@"上拉加载更多数据" forState:MJRefreshStateIdle];
+    [footer setTitle:@"松开加载" forState:MJRefreshStatePulling];
+    [footer setTitle:@"小客正在加载" forState:MJRefreshStateRefreshing];
+    self.collectionView.mj_footer=footer;
+}
+//刷新数据
+-(void)refreshData
+{
+    
+ [self getDataWithSort:Sort withTime:Time withOrder:Order];
+
+
+}
+//加载跟多数据
+-(void)loadMoreData
+{
+    
+    ImageTextModel *model=[self.dataArr lastObject];
+    
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        [ImageTextRequest getDataWithSort:Sort withTime:Time withStander:Order     withLastId: model.last_id  withBlock:^(ImageTextData *data)
+         {
+             [weakSelf.dataArr addObjectsFromArray:data.data];
+             [weakSelf.collectionView.mj_header endRefreshing];
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 
+                 [weakSelf.collectionView reloadData];
+             });
+             
+         } withErrorBlock:^(NSError *error)
+         {
+             [SVProgressHUD showErrorWithStatus:@"失败了,再来一次！"];
+             [weakSelf.collectionView.mj_header endRefreshing];
+         }];
+    });
+
+}
+
 - (NSInteger)numberOfColumnsInMenu:(DOPDropDownMenu *)menu
 {
    
@@ -124,35 +185,36 @@ static NSString *const Cell=@"cell";
 }
 -(void)menu:(DOPDropDownMenu *)menu didSelectRowAtIndexPath:(DOPIndexPath *)indexPath
 {
-   static NSInteger sort,time,order;
+
     if (indexPath.column==0)
     {
-        sort=indexPath.row;
+        Sort=indexPath.row;
         
     }
     else if (indexPath.column==1)
     {
-        time=indexPath.row;
+        Time=indexPath.row;
        
     }
     else
     {
-        order=indexPath.row;
+        Order=indexPath.row;
     }
-    [self getDataWithSort:sort withTime:time withOrder:order];
+    [self.collectionView.mj_header beginRefreshing];
+    
     
 }
 #pragma mark-请求数据
--(void)getDataWithSort:(NSInteger)sort withTime:(NSInteger)time withOrder:(NSInteger)order
+-(void)getDataWithSort:(NSInteger)sort withTime:(NSInteger)time withOrder:(NSInteger)order 
 {
     [self.dataArr removeAllObjects];
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
     
-        [ImageTextRequest getDataWithSort:sort withTime:time withStander:order withBlock:^(ImageTextData *data)
+        [ImageTextRequest getDataWithSort:sort withTime:time withStander:order     withLastId:nil withBlock:^(ImageTextData *data)
          {
              [weakSelf.dataArr addObjectsFromArray:data.data];
-             
+             [weakSelf.collectionView.mj_header endRefreshing];
              dispatch_async(dispatch_get_main_queue(), ^{
                  
                  [weakSelf.collectionView reloadData];
@@ -161,7 +223,7 @@ static NSString *const Cell=@"cell";
          } withErrorBlock:^(NSError *error)
          {
              [SVProgressHUD showErrorWithStatus:@"失败了,再来一次！"];
-//             [weakSelf.tableView.mj_footer endRefreshing];
+             [weakSelf.collectionView.mj_header endRefreshing];
          }];
     });
 
@@ -175,8 +237,9 @@ static NSString *const Cell=@"cell";
 }
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    return CGSizeMake((kMainW-30)/2,kMainH*1/2);
+    CGFloat width =(kMainW-30)/2;
+    CGFloat height =width *3/2;
+    return CGSizeMake(width, height);
     
 }
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
@@ -188,10 +251,29 @@ static NSString *const Cell=@"cell";
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ImageTextCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:Cell forIndexPath:indexPath];
-    cell.backgroundColor=[UIColor yellowColor];
     ImageTextModel *model=self.dataArr[indexPath.row];
-    cell.model=model;
+    
+
+    if (Order==4 || Order==5)
+    {
+        CGFloat width =(kMainW-30)/2;
+        cell.priceLB.frame= CGRectMake(width*3/5, 10,width, 30);
+    }
+    else
+    {
+      cell.priceLB.frame=CGRectZero;
+    }
+     cell.model=model;
+   
     return cell;
+
+
+}
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+
+
+
 
 
 }

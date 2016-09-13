@@ -10,4 +10,5 @@
 
 @interface ImageTextCell : UICollectionViewCell
 @property(strong,nonatomic)ImageTextModel *model;
+@property(nonatomic,strong)UILabel *priceLB;
 @end
