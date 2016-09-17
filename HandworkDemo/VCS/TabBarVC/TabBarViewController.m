@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tabBar.translucent=NO;
     [self addChildViewController];
     
 }

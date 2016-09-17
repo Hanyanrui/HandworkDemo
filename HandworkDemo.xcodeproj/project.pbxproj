@@ -436,6 +436,7 @@
 		3F5D11951D79B7A000735890 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5D11941D79B7A000735890 /* ImageViewController.m */; };
 		3F5D11991D79C3C200735890 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5D11981D79C3C200735890 /* TabBarViewController.m */; };
 		3F5D11A91D79C6E500735890 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5D11A81D79C6E500735890 /* MineViewController.m */; };
+		3F6D4B781D8D14E000145178 /* VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D4B771D8D14E000145178 /* VideoCell.m */; };
 		3FC4B3AC1D801A57004D7B12 /* NavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC4B3AB1D801A57004D7B12 /* NavigationView.m */; };
 		3FC4B3B21D8058A0004D7B12 /* ImageTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC4B3B11D8058A0004D7B12 /* ImageTextViewController.m */; };
 		3FC4B3B51D8058B0004D7B12 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC4B3B41D8058B0004D7B12 /* VideoViewController.m */; };
@@ -948,6 +949,8 @@
 		3F5D11981D79C3C200735890 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		3F5D11A71D79C6E500735890 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		3F5D11A81D79C6E500735890 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		3F6D4B761D8D14E000145178 /* VideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCell.h; sourceTree = "<group>"; };
+		3F6D4B771D8D14E000145178 /* VideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCell.m; sourceTree = "<group>"; };
 		3FC4B3AA1D801A57004D7B12 /* NavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationView.h; sourceTree = "<group>"; };
 		3FC4B3AB1D801A57004D7B12 /* NavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationView.m; sourceTree = "<group>"; };
 		3FC4B3B01D8058A0004D7B12 /* ImageTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTextViewController.h; sourceTree = "<group>"; };
@@ -2673,6 +2676,8 @@
 		3F021E031D884CF10090CC55 /* VideoCell */ = {
 			isa = PBXGroup;
 			children = (
+				3F6D4B761D8D14E000145178 /* VideoCell.h */,
+				3F6D4B771D8D14E000145178 /* VideoCell.m */,
 			);
 			path = VideoCell;
 			sourceTree = "<group>";
@@ -3770,6 +3775,7 @@
 				3FFF59671D7E6FD900A60174 /* RegistViewController.m in Sources */,
 				3F5D0E1C1D799CA800735890 /* AppDelegate.m in Sources */,
 				3FFB1C741D86EB4900ABEC7F /* ImageTextCell.m in Sources */,
+				3F6D4B781D8D14E000145178 /* VideoCell.m in Sources */,
 				3F2A6EBA1D7D4D7500B69B99 /* DataModel.m in Sources */,
 				3F2A6EAE1D7D478200B69B99 /* ExpertManRequest.m in Sources */,
 				3F49B7FD1D7FF37000D394D0 /* AddGuanZhuRequest.m in Sources */,

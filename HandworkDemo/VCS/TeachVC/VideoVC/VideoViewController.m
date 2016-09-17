@@ -29,6 +29,7 @@ static NSString *const Cell=@"cell";
     [super viewDidLoad];
     [self creatDownMenuView];
     [self createTableView];
+    [self createRefreshHeaderAndFoofer];
 }
 
 #pragma mark-懒加载初始化数据源
@@ -125,16 +126,14 @@ static NSString *const Cell=@"cell";
 #pragma mark- 请求数据
 -(void)getDataWithCate:(NSInteger)cate withPrice:(NSInteger)price withSort:(NSInteger)sort
 {
-    [self.dataArr removeAllObjects];
+  [self.dataArr removeAllObjects];
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-       static NSInteger page=1;
-        NSString *pageStr=[NSString stringWithFormat:@"%ld",page];
-        [VideoRequest getDataWithCate:cate withPrice:price withSort:sort     withPage: pageStr withBlock:^(VideoData *data)
+        [VideoRequest getDataWithCate:cate withPrice:price withSort:sort     withPage: @"1" withBlock:^(VideoData *data)
          {
              [weakSelf.dataArr addObjectsFromArray:data.data];
              [weakSelf.tableView.mj_header endRefreshing];
-             page+=1;
+             
              dispatch_async(dispatch_get_main_queue(), ^{
                  
                  [weakSelf.tableView reloadData];
@@ -151,7 +150,7 @@ static NSString *const Cell=@"cell";
 #pragma mark-下拉刷新和上提加载
 -(void)createRefreshHeaderAndFoofer
 {
-    MJRefreshGifHeader *header=[MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
+    MJRefreshGifHeader *header=[MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData:)];
     [header setImages:RefreshImages forState:(MJRefreshStateRefreshing)];
     header.lastUpdatedTimeLabel.hidden = YES;
     [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
@@ -160,20 +159,40 @@ static NSString *const Cell=@"cell";
     self.tableView.mj_header=header;
     [header beginRefreshing];
     
-    MJRefreshAutoGifFooter *footer=[MJRefreshAutoGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    MJRefreshAutoGifFooter *footer=[MJRefreshAutoGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData:)];
     [footer setImages:RefreshImages forState:(MJRefreshStateRefreshing)];
     [footer setTitle:@"上拉加载更多数据" forState:MJRefreshStateIdle];
     [footer setTitle:@"松开加载" forState:MJRefreshStatePulling];
     [footer setTitle:@"小客正在加载" forState:MJRefreshStateRefreshing];
     self.tableView.mj_footer=footer;
 }
--(void)refreshData
+-(void)refreshData:(MJRefreshHeader*)header
 {
     [self getDataWithCate:Cate withPrice:Price withSort:Sort];
 }
--(void)loadMoreData
+-(void)loadMoreData:(MJRefreshAutoGifFooter*)footer
 {
-  [self getDataWithCate:Cate withPrice:Price withSort:Sort];
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSInteger  page=self.dataArr.count/20;
+        NSString *pageStr=[NSString stringWithFormat:@"%ld",page+1];
+        
+        [VideoRequest getDataWithCate:Cate withPrice:Price withSort:Sort     withPage: pageStr withBlock:^(VideoData *data)
+         {
+             [weakSelf.dataArr addObjectsFromArray:data.data];
+             [weakSelf.tableView.mj_footer endRefreshing];
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 
+                 [weakSelf.tableView reloadData];
+             });
+             
+         } withErrorBlock:^(NSError *error)
+         {
+             [SVProgressHUD showErrorWithStatus:@"失败了,再来一次！"];
+             [weakSelf.tableView.mj_footer endRefreshing];
+         }];
+    });
+
 }
 
 
@@ -191,11 +210,11 @@ static NSString *const Cell=@"cell";
 #pragma mark-初始化TableView
 -(void)createTableView
 {
-    UITableView *tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 40, kMainW, kMainH-40) style:(UITableViewStylePlain)];
+    UITableView *tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 40, kMainW, kMainH-80) style:(UITableViewStylePlain)];
     tableView.delegate=self;
     tableView.dataSource=self;
     [self.view addSubview:tableView];
-//    [tableView registerClass:[VideoCell class] forCellReuseIdentifier:Cell];
+    [tableView registerClass:[VideoCell class] forCellReuseIdentifier:Cell];
     _tableView=tableView;
 
 }
@@ -207,21 +226,14 @@ static NSString *const Cell=@"cell";
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    return kMainH/3;
+    return kMainH/3+10;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:Cell];
+   VideoCell *cell=[tableView dequeueReusableCellWithIdentifier:Cell];
     VideoModel *model=self.dataArr[indexPath.row];
-//    cell.model=model;
-    
-    
+   cell.model=model;
     return cell;
-
-
-
-
-
 
 }
 
